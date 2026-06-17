@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    min-height: 100vh;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul, ol{
+    list-style: none;
+}
+button, input, select, textarea{
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

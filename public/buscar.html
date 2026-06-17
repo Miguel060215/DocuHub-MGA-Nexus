@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuHub - Buscar</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="l-wrapper">
+        <header class="l-header">
+            <div class="logo-placeholder">LOGO</div>
+            <nav class="l-nav-desktop">
+                <a href="index.html">INICIO</a>
+                <a href="buscar.html">BUSCAR</a>
+                <a href="subir.html">SUBIR</a>
+            </nav>
+            <div class="l-nav-mobile">☰</div>
+            <div class="user-info">LOGIN / NOMBRE USUARIO</div>
+        </header>
+
+        <main class="l-main">
+            <form class="search-form">
+                <input type="text" placeholder="BÚSQUEDA POR PALABRA CLAVE">
+                <button type="submit">BUSCAR</button>
+            </form>
+
+            <div class="l-dos-columnas">
+                <aside class="l-sidebar-scroll">
+                    <h3>FILTROS</h3>
+                    
+                    <fieldset>
+                        <legend>Carreras</legend>
+                        <label><input type="checkbox"> Software</label>
+                        <label><input type="checkbox"> Medicina</label>
+                        <button>Mostrar todas las carreras</button>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Tipo de documento</legend>
+                        <label><input type="checkbox"> Tesina</label>
+                        <label><input type="checkbox"> Reporte de Pract.</label>
+                        <label><input type="checkbox"> Articulo</label>
+                        <button>Mostrar mas tipos de docs.</button>
+                    </fieldset>
+                </aside>
+
+                <section class="l-content-scroll">
+                    <h3>RESULTADOS</h3>
+                    
+                    <article class="result-card">
+                        <p>Título del documento</p>
+                        <p>Autor: nombre | Carrera: carrera</p>
+                        <p>Resumen/Abstract: ...</p>
+                        <div class="tags-actions">
+                            <span>Etiqueta1</span> <span>Etiqueta2</span>
+                            <button>Ver</button>
+                        </div>
+                    </article>
+
+                    </section>
+            </div>
+        </main>
+
+        <footer class="l-footer">
+            <p>PIE DE PÁGINA</p>
+        </footer>
+    </div>
+</body>
+</html>
