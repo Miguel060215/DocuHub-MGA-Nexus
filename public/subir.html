@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuHub - Subir Documento</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="l-wrapper">
+        <header class="l-header">
+            <div class="logo-placeholder">LOGO</div>
+            <nav class="l-nav-desktop">
+                <a href="index.html">INICIO</a>
+                <a href="buscar.html">BUSCAR</a>
+                <a href="subir.html">SUBIR</a>
+            </nav>
+            <div class="user-info">LOGIN / NOMBRE USUARIO</div>
+        </header>
+
+        <main class="l-main">
+            <h2 style="text-align: center;">SUBIR DOCUMENTO</h2>
+            
+            <form class="l-form-container">
+                <p>Llena los campos</p>
+                
+                <label>Título del documento:</label>
+                <input type="text" required>
+                
+                <label>Tipo de documento:</label>
+                <select required>
+                    <option value="">Selecciona...</option>
+                </select>
+                
+                <label>Resumen / Abstract:</label>
+                <textarea rows="5" required></textarea>
+                
+                <div style="display: flex; gap: 1rem; justify-content: space-between;">
+                    <button type="button">Buscar documento PDF</button>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </main>
+
+        <footer class="l-footer">
+            <p>PIE DE PÁGINA</p>
+        </footer>
+    </div>
+</body>
+</html>
