@@ -1,0 +1,111 @@
+.l-form-container, 
+form {
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--borde-suave);
+}
+
+label {
+    display: block;
+    color: var(--texto-secundario);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--blanco);
+    border: 1px solid var(--borde-suave);
+    border-radius: 4px;
+    color: var(--texto-principal);
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--borde-suave);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--accion-primaria);
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2); 
+}
+
+fieldset {
+    border: 1px solid var(--borde-suave);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    color: var(--texto-principal);
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--accion-primaria);
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+fieldset label {
+    display: flex;
+    align-items: center;
+    color: var(--texto-secundario);
+    font-weight: normal;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.login-register-container {
+    max-width: 400px;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.form-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background-color: var(--accion-secundaria);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.form-toggle button {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 0;
+    color: var(--texto-secundario);
+}
+
+.form-toggle button.active {
+    background-color: var(--estructura-oscura);
+    color: var(--blanco);
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--texto-secundario);
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: var(--texto-principal);
+    text-decoration: underline;
+}
