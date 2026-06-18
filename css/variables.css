@@ -1,21 +1,19 @@
 :root {
-
+  /*Coolores*/
   --blanco: #FFFFFF;
-  --gris-100: #F3F4F6; 
-  --gris-300: #D1D5DB; 
-  --gris-400: #9CA3AF; 
-  --gris-600: #4B5563; 
-  --fondo-base: #111827;
-  --fondo-oscuro: #030712; 
-
-  --estructura-dark: #022C22; 
-  --estructura: #064E3B;
-  --accion-secundaria: #047857;
-  --accion-secundaria-hover: #059669; 
-
-  
-  --accion-primaria-dark: #059669; 
+  --bg-base: #F9FAFB;
+  --estructura-oscura: #1E293B;
+  --borde-suave: #D1D5DB;
+  --texto-principal: #111827;
+  --texto-secundario: #4B5563;
   --accion-primaria: #10B981;
-  --accion-primaria-light: #34D399; 
-  --accion-primaria-lighest: #D1FAE5; 
+  --accion-primaria-hover: #059669;
+  --accion-secundaria: #F3F4F6;
+  --accion-secundaria-texto: #374151;
+  --peligro: #EF4444;
+  --peligro-hover: #DC2626;
+
+  /*Fuentes de texto*/
+  --fuente-titulos: 'Montserrat', sans-serif;
+  --fuente-principal: 'Inter', sans-serif;
 }

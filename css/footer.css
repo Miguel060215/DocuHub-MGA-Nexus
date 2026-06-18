@@ -1,0 +1,6 @@
+.l-footer {
+    background-color: var(--estructura-oscura);
+    color: var(--borde-suave);
+    font-size: 0.9rem;
+    margin-top: auto;
+}

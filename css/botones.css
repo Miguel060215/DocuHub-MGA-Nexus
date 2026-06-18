@@ -1,0 +1,58 @@
+button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button[type="submit"], 
+.download-btn,
+.btn-aprobar {
+    background-color: var(--accion-primaria);
+    color: var(--blanco);
+}
+
+button[type="submit"]:hover, 
+.download-btn:hover,
+.btn-aprobar:hover {
+    background-color: var(--accion-primaria-hover);
+    transform: translateY(-2px);
+}
+
+.back-btn, 
+.card button,
+.btn-leer {
+    background-color: var(--accion-secundaria);
+    color: var(--accion-secundaria-texto);
+    border: 1px solid var(--borde-suave);
+}
+
+.back-btn:hover, 
+.card button:hover,
+.btn-leer:hover {
+    background-color: var(--borde-suave);
+}
+
+.btn-rechazar {
+    background-color: var(--peligro);
+    color: var(--blanco);
+}
+
+.btn-rechazar:hover {
+    background-color: var(--peligro-hover);
+    transform: translateY(-2px);
+}
+
+.form-toggle button {
+    background: transparent;
+    color: var(--texto-secundario);
+    padding: 0 0.5rem;
+}
+
+.form-toggle button:hover {
+    color: var(--texto-principal);
+    text-decoration: underline;
+}

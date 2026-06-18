@@ -1,0 +1,77 @@
+.l-header {
+    background-color: var(--estructura-oscura);
+    color: var(--blanco);
+}
+.l-nav-desktop {
+    display: flex;
+    gap: 1rem;
+}
+.l-nav-desktop a {
+    color: var(--borde-suave);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.l-nav-desktop a:hover {
+    color: var(--blanco);
+    background-color: var(--accion-primaria);
+}
+
+.user-info {
+    color: var(--blanco);
+    font-weight: bold;
+}
+
+.l-nav-mobile {
+    display: none;
+    color: var(--accion-primaria);
+    font-size: 1.5rem;
+    position: relative;
+    cursor: pointer;
+}
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 40%;
+    right: 0;
+    background-color: var(--estructura-oscura);
+    border: 1px solid var(--borde-suave);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1000;
+    padding: 0.5rem 0;
+    min-width: 200px;
+}
+.l-nav-mobile:hover .mobile-menu {
+    display: block;
+}
+.mobile-menu li{
+    width: 100%;
+}
+.mobile-menu li a{
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--borde-suave);
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.mobile-menu li a:hover{
+    background-color: var(--accion-primaria);
+    color: var(--blanco);
+}
+.mobile-menu.active {
+    display: block;
+}
+@media (max-width: 768px) {
+    .l-nav-desktop {
+        display: none; 
+    }
+
+    .l-nav-mobile {
+        display: block; 
+    }
+}
