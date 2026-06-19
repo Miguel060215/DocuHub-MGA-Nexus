@@ -71,10 +71,12 @@ fieldset label {
 }
 
 .login-register-container {
-    max-width: 400px;
+    max-width: 700px;
     margin: 4rem auto;
     text-align: center;
+    width: 100%;
 }
+
 
 .form-toggle {
     display: flex;
@@ -108,4 +110,19 @@ fieldset label {
 .forgot-password:hover {
     color: var(--texto-principal);
     text-decoration: underline;
+}
+
+.l-login-container .logo-circle {
+    width: 120px;
+    height: 120px;
+}
+
+.l-login-container .logo-img {
+    width: 80px;
+    height: auto;
+}
+@media (min-width: 768px) {
+    .login-register-container {
+        max-width: 700px !important;
+    }
 }

@@ -27,7 +27,7 @@
                     <label>Ingresa tu contraseña</label>
                     <input type="password" required placeholder="Contraseña">
 
-                    <button type="submit">INICIAR SESIÓN</button>
+                    <button type="submit" class="btn-primary">INICIAR SESIÓN</button>
                     <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 </form>
 
@@ -42,7 +42,12 @@
                     <input type="text" required placeholder="Tu segundo apellido">
 
                     <label>Carrera Universitaria</label>
-                    <input type="text" required placeholder="Tu carrera">
+                    <select required>
+                        <option value="" disabled selected>Selecciona tu carrera</option>
+                        <option value="1">Desarrollo de Software Multiplataforma</option>
+                        <option value="2">Ciberseguridad</option>
+                        <option value="3">Infraestructura de Redes Digitales</option>
+                    </select>
 
                     <label>Ingresa tu correo electrónico</label>
                     <input type="email" required placeholder="correo@ejemplo.com">
@@ -56,7 +61,7 @@
                     <label>Confirma tu contraseña</label>
                     <input type="password" required placeholder="Confirmar contraseña">
 
-                    <button type="submit">REGISTRARSE</button>
+                    <button type="submit" class="btn-primary">REGISTRARSE</button>
                 </form>
             </div>
             
