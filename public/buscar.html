@@ -19,7 +19,7 @@
                 <a href="subir.html">SUBIR</a>
             </nav>
             <div class="l-nav-mobile">
-                <span id="btn-menu" >☰</span>
+                <span id="btn-menu">☰</span>
                 <ul class="mobile-menu" id="menu-desplegable">
                     <li><a href="index.html">INICIO</a></li>
                     <li><a href="buscar.html">BUSCAR</a></li>
@@ -32,10 +32,11 @@
         <main class="l-main">
             <form class="search-form">
                 <input type="text" placeholder="BÚSQUEDA POR PALABRA CLAVE">
-                <button type="submit">BUSCAR</button>
+                <button type="submit" class="btn">BUSCAR</button>
             </form>
 
             <div class="l-dos-columnas">
+                
                 <aside class="l-sidebar-scroll">
                     <h3>FILTROS</h3>
                     
@@ -43,7 +44,7 @@
                         <legend>Carreras</legend>
                         <label><input type="checkbox"> Software</label>
                         <label><input type="checkbox"> Medicina</label>
-                        <button>Mostrar todas las carreras</button>
+                        <button type="button" class="btn-link">Mostrar todas las carreras</button>
                     </fieldset>
 
                     <fieldset>
@@ -51,24 +52,50 @@
                         <label><input type="checkbox"> Tesina</label>
                         <label><input type="checkbox"> Reporte de Pract.</label>
                         <label><input type="checkbox"> Articulo</label>
-                        <button>Mostrar mas tipos de docs.</button>
+                        <button type="button" class="btn-link">Mostrar mas tipos de docs.</button>
                     </fieldset>
                 </aside>
 
                 <section class="l-content-scroll">
                     <h3>RESULTADOS</h3>
                     
-                    <article class="result-card">
-                        <p>Título del documento</p>
-                        <p>Autor: nombre | Carrera: carrera</p>
-                        <p>Resumen/Abstract: ...</p>
-                        <div class="tags-actions">
-                            <span>Etiqueta1</span> <span>Etiqueta2</span>
-                            <button>Ver</button>
-                        </div>
-                    </article>
+                    <div class="results-grid">
+                        <article class="card">
+                            <div class="card-header">
+                                <h4>Título del documento</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-meta">Autor: nombre | Carrera: carrera</p>
+                                <p>Resumen/Abstract: Aquí va la descripción breve del documento que guardaron en el proyecto...</p>
+                                <div class="tags">
+                                    <span class="tag">Etiqueta1</span>
+                                    <span class="tag">Etiqueta2</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn">Ver</button>
+                            </div>
+                        </article>
 
-                    </section>
+                        <article class="card">
+                            <div class="card-header">
+                                <h4>Proyecto MGA Nexus</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-meta">Autor: Derek Mag | Carrera: Software</p>
+                                <p>Maquetación base de la interfaz del catálogo y buscador avanzado responsivo.</p>
+                                <div class="tags">
+                                    <span class="tag">HTML</span>
+                                    <span class="tag">CSS</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn">Ver</button>
+                            </div>
+                        </article>
+                    </div>
+
+                </section>
             </div>
         </main>
 
