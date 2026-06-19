@@ -1,0 +1,52 @@
+/* Contenedor de dos columnas */
+.l-dos-columnas {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* 280px para filtros, el resto para resultados */
+    gap: 25px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+/* Columna de filtros */
+.l-sidebar-scroll {
+    background-color: #fcfcfc;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.l-sidebar-scroll fieldset {
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.l-sidebar-scroll legend {
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+/* El grid interno para acomodar las tarjetas de resultados */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+/* ==========================================
+   COMPORTAMIENTO RESPONSIVO (MÓVILES)
+   ========================================== */
+@media (max-width: 768px) {
+    .l-dos-columnas {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+    }
+
+    .l-sidebar-scroll {
+        width: 100%; /* Los filtros se acomodan arriba ocupando todo el ancho */
+    }
+}
