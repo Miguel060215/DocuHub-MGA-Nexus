@@ -3,59 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DocuHub - Detalle</title>
+    <title>DocuHub - Detalle del Documento</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="l-wrapper">
-<<<<<<< Updated upstream
-         <header class="l-header">
-=======
         <header class="l-header">
->>>>>>> Stashed changes
             <div class="logo-circle">
                 <img src="../assets/Logotipo.png" alt="Logo DocuHub" class="logo-img">
             </div>
-
             <nav class="l-nav-desktop">
                 <a href="index.html">INICIO</a>
                 <a href="buscar.html">BUSCAR</a>
                 <a href="subir.html">SUBIR</a>
             </nav>
             <div class="l-nav-mobile">
-<<<<<<< Updated upstream
-                <span id="btn-menu" >☰</span>
-                <ul class="mobile-menu" id="menu-desplegable">
-                    <li><a href="index.html">INICIO</a></li>
-                    <li><a href="buscar.html">BUSCAR</a></li>
-                    <li><a href="subir.html">SUBIR</a></li>
-                </ul>
-=======
                 <span id="btn-menu">☰</span>
->>>>>>> Stashed changes
             </div>
             <a class="user-info" href="login.html">LOGIN</a>
         </header>
 
-<<<<<<< Updated upstream
-        <main class="l-main">
-            <button class="back-btn">VOLVER A TU BÚSQUEDA</button>
-
-            <div class="l-dos-columnas">
-                <section class="document-info">
-                    <h2>Título del documento</h2>
-                    <p>Autor: [Nombre]</p>
-                    <p>Carrera: [Carrera]</p>
-                    <p>Fecha: [Fecha]</p>
-                    <p>Tipo: Tesina</p>
-                    
-                    <h3>Resumen Abstract:</h3>
-                    <p>...</p>
-
-                    <div class="tags-container">
-                        <span>Etiqueta1</span>
-                        <span>Etiqueta2</span>
-=======
         <main class="l-main l-main--detalle">
             <a href="buscar.html" class="back-btn">← VOLVER A LA BÚSQUEDA</a>
 
@@ -73,7 +40,7 @@
 
                     <div class="detalle-resumen">
                         <h2 class="detalle-resumen__titulo">Resumen</h2>
-                        <p class="detalle-resumen__texto">El presente trabajo aborda los protocolos de encriptación aplicados a bases de datos relacionales...</p>
+                        <p class="detalle-resumen__texto">El presente trabajo aborda los protocolos de encriptación aplicados a bases de datos relacionales en entornos universitarios, con el objetivo de garantizar la confidencialidad, integridad y disponibilidad de la información académica y administrativa.</p>
                     </div>
 
                     <div class="detalle-tags">
@@ -84,22 +51,9 @@
                     <div class="detalle-acciones">
                         <a href="#pdf-viewer" id="btn-leer-pdf" class="btn-leer">Leer en línea</a>
                         <a href="documento.pdf" download class="download-btn">Descargar PDF</a>
->>>>>>> Stashed changes
                     </div>
                 </aside>
 
-<<<<<<< Updated upstream
-                    <button class="download-btn">Descargar PDF</button>
-                </section>
-
-                <section class="l-document-preview">
-                    <h3>Vista del documento en linea</h3>
-                    <div class="pdf-viewer-placeholder">
-                        Documento PDF Embebido
-                    </div>
-                </section>
-            </div>
-=======
                 <section class="detalle-visor" id="pdf-viewer">
                     <h2 class="detalle-visor__titulo">Vista previa del documento</h2>
                     <div class="pdf-placeholder" id="pdf-placeholder">
@@ -109,7 +63,6 @@
                 </section>
 
             </section>
->>>>>>> Stashed changes
         </main>
 
         <footer class="l-footer">
@@ -118,8 +71,7 @@
             </div>
         </footer>
     </div>
-<<<<<<< Updated upstream
-=======
+    
     <script src="../js/main.js"></script>
     <script>
         document.getElementById('btn-leer-pdf').addEventListener('click', function () {
@@ -132,6 +84,5 @@
             }
         });
     </script>
->>>>>>> Stashed changes
 </body>
 </html>
