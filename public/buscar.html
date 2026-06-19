@@ -30,72 +30,109 @@
         </header>
 
         <main class="l-main">
-            <form class="search-form">
-                <input type="text" placeholder="BÚSQUEDA POR PALABRA CLAVE">
-                <button type="submit" class="btn">BUSCAR</button>
-            </form>
+            <div class="search-container-wrapper">
+                <form class="search-form-pill">
+                    <input type="text" placeholder="Busqueda por palabra clave">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
 
-            <div class="l-dos-columnas">
+            <div class="l-dos-columnas-catalog">
                 
-                <aside class="l-sidebar-scroll">
-                    <h3>FILTROS</h3>
-                    
-                    <fieldset>
-                        <legend>Carreras</legend>
-                        <label><input type="checkbox"> Software</label>
-                        <label><input type="checkbox"> Medicina</label>
-                        <button type="button" class="btn-link">Mostrar todas las carreras</button>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Tipo de documento</legend>
-                        <label><input type="checkbox"> Tesina</label>
-                        <label><input type="checkbox"> Reporte de Pract.</label>
-                        <label><input type="checkbox"> Articulo</label>
-                        <button type="button" class="btn-link">Mostrar mas tipos de docs.</button>
-                    </fieldset>
-                </aside>
-
-                <section class="l-content-scroll">
-                    <h3>RESULTADOS</h3>
-                    
-                    <div class="results-grid">
-                        <article class="card">
-                            <div class="card-header">
-                                <h4>Título del documento</h4>
+                <div class="panel-container">
+                    <h3 class="panel-title">Filtros</h3>
+                    <aside class="scrollable-panel">
+                        <div class="filtro-grupo">
+                            <h4>Carreras</h4>
+                            <div class="checkbox-grid">
+                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
+                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
+                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
+                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
                             </div>
-                            <div class="card-body">
-                                <p class="card-meta">Autor: nombre | Carrera: carrera</p>
-                                <p>Resumen/Abstract: Aquí va la descripción breve del documento que guardaron en el proyecto...</p>
-                                <div class="tags">
-                                    <span class="tag">Etiqueta1</span>
-                                    <span class="tag">Etiqueta2</span>
+                            <button class="btn-full">Mas carreras</button>
+                        </div>
+
+                        <div class="filtro-grupo">
+                            <h4>Tipos de documento</h4>
+                            <div class="checkbox-grid">
+                                <label class="check-btn"><input type="checkbox"> Tesina</label>
+                                <label class="check-btn"><input type="checkbox"> Reporte</label>
+                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
+                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="panel-container">
+                    <h3 class="panel-title">Resultados</h3>
+                    <section class="scrollable-panel">
+                        
+                        <article class="card-resultado">
+                            <div class="card-resultado-header">
+                                <h4>Titulo: Nombre Doc</h4>
+                                <p>Autor: Nombre Autor</p>
+                                <p>Abstract: resumen del documento</p>
+                            </div>
+                            <hr class="dotted-divider">
+                            <div class="card-resultado-footer">
+                                <div class="tags-green">
+                                    <span class="tag-green">Etiqueta</span>
+                                    <span class="tag-green">Etiqueta</span>
+                                    <span class="tag-green">Etiqueta</span>
                                 </div>
-                            </div>
-                            <div class="card-footer">
-                                <button class="btn">Ver</button>
+                                <button class="btn-ver-mas" onclick="window.location.href='documento.html'">Ver Mas</button>
                             </div>
                         </article>
 
-                        <article class="card">
-                            <div class="card-header">
-                                <h4>Proyecto MGA Nexus</h4>
+                        <article class="card-resultado">
+                            <div class="card-resultado-header">
+                                <h4>Titulo: Nombre Doc</h4>
+                                <p>Autor: Nombre Autor</p>
+                                <p>Abstract: resumen del documento</p>
                             </div>
-                            <div class="card-body">
-                                <p class="card-meta">Autor: Derek Mag | Carrera: Software</p>
-                                <p>Maquetación base de la interfaz del catálogo y buscador avanzado responsivo.</p>
-                                <div class="tags">
-                                    <span class="tag">HTML</span>
-                                    <span class="tag">CSS</span>
+                            <hr class="dotted-divider">
+                            <div class="card-resultado-footer">
+                                <div class="tags-green">
+                                    <span class="tag-green">Etiqueta</span>
                                 </div>
-                            </div>
-                            <div class="card-footer">
-                                <button class="btn">Ver</button>
+                                <button class="btn-ver-mas" onclick="window.location.href='documento.html'">Ver Mas</button>
                             </div>
                         </article>
-                    </div>
 
-                </section>
+                        <article class="card-resultado">
+                            <div class="card-resultado-header">
+                                <h4>Titulo: Nombre Doc</h4>
+                                <p>Autor: Nombre Autor</p>
+                                <p>Abstract: resumen del documento</p>
+                            </div>
+                            <hr class="dotted-divider">
+                            <div class="card-resultado-footer">
+                                <div class="tags-green">
+                                    <span class="tag-green">Etiqueta</span>
+                                </div>
+                                <button class="btn-ver-mas" onclick="window.location.href='documento.html'">Ver Mas</button>
+                            </div>
+                        </article>
+
+                        <article class="card-resultado">
+                            <div class="card-resultado-header">
+                                <h4>Titulo: Nombre Doc</h4>
+                                <p>Autor: Nombre Autor</p>
+                                <p>Abstract: resumen del documento</p>
+                            </div>
+                            <hr class="dotted-divider">
+                            <div class="card-resultado-footer">
+                                <div class="tags-green">
+                                    <span class="tag-green">Etiqueta</span>
+                                </div>
+                                <button class="btn-ver-mas" onclick="window.location.href='documento.html'">Ver Mas</button>
+                            </div>
+                        </article>
+
+                    </section>
+                </div>
             </div>
         </main>
 
