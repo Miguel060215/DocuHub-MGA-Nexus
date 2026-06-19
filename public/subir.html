@@ -8,7 +8,8 @@
 </head>
 <body>
     <div class="l-wrapper">
-         <header class="l-header">
+        <!-- HEADER (Encabezado) -->
+        <header class="l-header">
             <div class="logo-circle">
                 <img src="../assets/Logotipo.png" alt="Logo DocuHub" class="logo-img">
             </div>
@@ -19,7 +20,7 @@
                 <a href="subir.html">SUBIR</a>
             </nav>
             <div class="l-nav-mobile">
-                <span id="btn-menu" >☰</span>
+                <span id="btn-menu">☰</span>
                 <ul class="mobile-menu" id="menu-desplegable">
                     <li><a href="index.html">INICIO</a></li>
                     <li><a href="buscar.html">BUSCAR</a></li>
@@ -29,30 +30,53 @@
             <a class="user-info" href="login.html">LOGIN</a>
         </header>
 
+        <!-- MAIN (Contenido principal) -->
         <main class="l-main">
             <h2 style="text-align: center;">SUBIR DOCUMENTO</h2>
             
             <form class="l-form-container">
                 <p>Llena los campos</p>
-                
-                <label>Título del documento:</label>
-                <input type="text" required>
-                
-                <label>Tipo de documento:</label>
-                <select required>
-                    <option value="">Selecciona...</option>
-                </select>
-                
-                <label>Resumen / Abstract:</label>
-                <textarea rows="5" required></textarea>
-                
-                <div style="display: flex; gap: 1rem; justify-content: space-between;">
-                    <button type="button">Buscar documento PDF</button>
-                    <button type="submit">Enviar</button>
+
+                <div class="form-group">
+                    <label for="titulo">Título del documento:</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Ingrese el título de la investigación" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="carrera">Carrera:</label>
+                    <select id="carrera" name="carrera" required>
+                        <option value="">Seleccione una carrera</option>
+                        <option value="sistemas">Ingeniería en Sistemas</option>
+                        <option value="industrial">Ingeniería Industrial</option>
+                        <option value="administracion">Administración</option>
+                        <option value="contabilidad">Contabilidad</option>
+                        <option value="derecho">Derecho</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="palabras">Palabras Clave:</label>
+                    <input type="text" id="palabras" name="palabras" placeholder="IA, Tecnología, Programación">
+                </div>
+
+                <div class="form-group">
+                    <label for="resumen">Resumen / Abstract:</label>
+                    <textarea id="resumen" name="resumen" rows="5" placeholder="Escriba un resumen de la investigación" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="archivo">Archivo PDF:</label>
+                    <input type="file" id="archivo" name="archivo" accept=".pdf" required>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: space-between; margin-top: 1.5rem;">
+                    <button type="button" class="btn-secondary">Buscar documento PDF</button>
+                    <button type="submit" class="btn-primary">Enviar</button>
                 </div>
             </form>
         </main>
 
+        <!-- FOOTER (Pie de página) -->
         <footer class="l-footer">
             <div class="footer-content">
                 <p>&copy; 2026 MGA Nexus</p>
@@ -63,96 +87,5 @@
             </div>
         </footer>
     </div>
-
-    /*lol*/
-
-    <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Subir Investigación</title>
-
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/formularios.css">
-    <link rel="stylesheet" href="../css/botones.css">
-</head>
-<body>
-
-    <div class="l-form-container">
-
-        <h1>Subir Investigación</h1>
-
-        <form>
-
-            <div class="form-group">
-                <label for="titulo">Título</label>
-                <input
-                    type="text"
-                    id="titulo"
-                    name="titulo"
-                    placeholder="Ingrese el título de la investigación"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="resumen">Resumen</label>
-                <textarea
-                    id="resumen"
-                    name="resumen"
-                    rows="6"
-                    placeholder="Escriba un resumen de la investigación"
-                    required
-                ></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="palabras">Palabras Clave</label>
-                <input
-                    type="text"
-                    id="palabras"
-                    name="palabras"
-                    placeholder="IA, Tecnología, Programación"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="carrera">Carrera</label>
-
-                <select id="carrera" name="carrera" required>
-                    <option value="">Seleccione una carrera</option>
-                    <option value="sistemas">Ingeniería en Sistemas</option>
-                    <option value="industrial">Ingeniería Industrial</option>
-                    <option value="administracion">Administración</option>
-                    <option value="contabilidad">Contabilidad</option>
-                    <option value="derecho">Derecho</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="archivo">Archivo PDF</label>
-                <input
-                    type="file"
-                    id="archivo"
-                    name="archivo"
-                    accept=".pdf"
-                    required
-                >
-            </div>
-
-            <button type="submit" class="btn-primary">
-                Enviar Investigación
-            </button>
-
-        </form>
-
-    </div>
-
-</body>
-</html>
-
 </body>
 </html>
