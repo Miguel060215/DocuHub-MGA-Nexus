@@ -1,39 +1,54 @@
 /* =============================================
-   DETALLE.CSS — Estilos exclusivos de la vista
-   de detalle de un documento
+   DETALLE.CSS — Estilos definitivos (Unificados)
    ============================================= */
 
-/* --- Botón "Volver a la búsqueda" ---
-   Se ajusta solo a esta vista: ocupa el ancho de su
-   contenido (no el 100% de la página) y queda bien redondeado */
-.l-main--detalle .back-btn {
-    display: inline-block;
-    width: fit-content;
-    border-radius: 10px;
-    padding: 0.6rem 1.2rem;
+/* Contenedor principal que unifica la info y el visor con borde verde */
+.l-detalle-wrapper {
+    display: grid;
+    grid-template-columns: 420px 1fr; /* Izquierda fija, derecha flexible */
+    gap: 2rem;
+    padding: 2rem;
+    border: 2px solid #90c2a7; /* Borde verde unificado */
+    border-radius: 12px;
+    background-color: #ffffff;
+    margin-top: 1.5rem;
+    align-items: start;
 }
 
-/* --- Columna izquierda: contenedor de info --- */
+/* --- Botón Volver --- */
+.back-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    margin-bottom: 1rem;
+    background-color: var(--accion-primaria);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.back-btn:hover {
+    background-color: var(--accion-secundaria);
+}
+
+/* --- Columna información --- */
 .detalle-info {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    width: 420px;
-    flex-shrink: 0;
-    overflow-y: auto;
-    padding-right: 0.5rem;
+    width: 100%;
 }
 
-/* --- Título principal del documento (H1 grande) --- */
 .detalle-titulo {
     font-family: var(--fuente-titulos);
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--texto-principal);
     line-height: 1.35;
+    margin: 0;
 }
 
-/* --- Bloque de metadatos --- */
 .detalle-meta {
     display: flex;
     flex-direction: column;
@@ -54,7 +69,7 @@
     font-weight: 600;
 }
 
-/* --- Etiquetas temáticas --- */
+/* --- Etiquetas --- */
 .detalle-tags {
     display: flex;
     flex-wrap: wrap;
@@ -68,21 +83,13 @@
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.82rem;
-    font-family: var(--fuente-principal);
 }
 
-/* --- Sección del resumen --- */
-.detalle-resumen {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
+/* --- Resumen --- */
 .detalle-resumen__titulo {
     font-family: var(--fuente-titulos);
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--texto-principal);
 }
 
 .detalle-resumen__texto {
@@ -93,101 +100,75 @@
     text-align: justify;
 }
 
-/* --- Botones de acción (leer + descargar) --- */
+/* --- Botones de Acción (Leer/Descargar) --- */
 .detalle-acciones {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
     padding-top: 0.5rem;
 }
 
-.detalle-acciones .btn-leer,
-.detalle-acciones .download-btn {
-    border-radius: 10px;
+.btn-leer {
+    display: inline-block;
     padding: 0.8rem 1.6rem;
+    background-color: transparent;
+    color: var(--accion-primaria);
+    border: 2px solid var(--accion-primaria);
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-/* --- Columna derecha: visor del PDF --- */
+.btn-leer:hover {
+    background-color: var(--accion-primaria);
+    color: #ffffff;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--accion-primaria);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* --- Visor PDF --- */
 .detalle-visor {
-    flex: 1;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    min-height: 600px;
 }
 
-.detalle-visor__titulo {
-    font-family: var(--fuente-titulos);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--texto-secundario);
-}
-
-/* --- Placeholder antes de cargar el PDF --- */
-.pdf-placeholder {
+.pdf-placeholder, .pdf-iframe {
     width: 100%;
     height: 600px;
+    border-radius: 8px;
+}
+
+.pdf-placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px dashed #90c2a7;
+    background-color: #fcfcfc;
     text-align: center;
     padding: 2rem;
-    border: 1px dashed var(--borde-suave);
-    border-radius: 8px;
-    background-color: var(--accion-secundaria);
-    color: var(--texto-secundario);
-    font-family: var(--fuente-principal);
-    font-size: 0.95rem;
 }
 
-/* --- iframe del PDF --- */
-.pdf-iframe {
-    width: 100%;
-    height: 600px;
-    border: 1px solid var(--borde-suave);
-    border-radius: 8px;
-    background-color: var(--accion-secundaria);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* --- Responsive: tablet y móvil --- */
+/* Responsive */
 @media (max-width: 1024px) {
-    .detalle-info {
-        width: 100%;
-        overflow-y: visible;
-        padding-right: 0;
-    }
-
-    .detalle-titulo {
-        font-size: 1.5rem;
-    }
-
-    .detalle-visor {
-        min-height: 400px;
-    }
-
-    .pdf-iframe {
-        height: 400px;
-    }
-
-    .pdf-placeholder {
-        height: 400px;
-    }
-}
-
-@media (max-width: 768px) {
-    .detalle-titulo {
-        font-size: 1.3rem;
-    }
-
-    .detalle-acciones {
-        flex-direction: column;
-    }
-
-    .detalle-acciones .btn-leer,
-    .detalle-acciones .download-btn {
-        width: 100%;
-        text-align: center;
-        box-sizing: border-box;
+    .l-detalle-wrapper {
+        grid-template-columns: 1fr;
     }
 }

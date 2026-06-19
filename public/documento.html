@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="l-wrapper">
-
         <header class="l-header">
             <div class="logo-circle">
                 <img src="../assets/Logotipo.png" alt="Logo DocuHub" class="logo-img">
@@ -20,122 +19,64 @@
             </nav>
             <div class="l-nav-mobile">
                 <span id="btn-menu">☰</span>
-                <ul class="mobile-menu" id="menu-desplegable">
-                    <li><a href="index.html">INICIO</a></li>
-                    <li><a href="buscar.html">BUSCAR</a></li>
-                    <li><a href="subir.html">SUBIR</a></li>
-                </ul>
             </div>
             <a class="user-info" href="login.html">LOGIN</a>
         </header>
 
         <main class="l-main l-main--detalle">
-
-            <!-- Botón volver -->
             <a href="buscar.html" class="back-btn">← VOLVER A LA BÚSQUEDA</a>
 
-            <!-- Layout de dos columnas: info a la izquierda, PDF a la derecha -->
-            <div class="l-dos-columnas">
+            <section class="l-detalle-wrapper">
 
-                <!-- Columna izquierda: información del documento -->
-                <section class="detalle-info">
-
-                    <h1 class="detalle-titulo">
-                        Implementación de Seguridad en Bases de Datos Relacionales en Entornos Universitarios
-                    </h1>
+                <aside class="detalle-info">
+                    <h1 class="detalle-titulo">Implementación de Seguridad en Bases de Datos Relacionales en Entornos Universitarios</h1>
 
                     <div class="detalle-meta">
-                        <span class="detalle-meta__item">
-                            <strong>Autor:</strong> Carlos Ruiz
-                        </span>
-                        <span class="detalle-meta__item">
-                            <strong>Carrera:</strong> Ciberseguridad
-                        </span>
-                        <span class="detalle-meta__item">
-                            <strong>Fecha:</strong> Junio 2026
-                        </span>
-                        <span class="detalle-meta__item">
-                            <strong>Tipo:</strong> Tesina
-                        </span>
+                        <span class="detalle-meta__item"><strong>Autor:</strong> Carlos Ruiz</span>
+                        <span class="detalle-meta__item"><strong>Carrera:</strong> Ciberseguridad</span>
+                        <span class="detalle-meta__item"><strong>Fecha:</strong> Junio 2026</span>
+                        <span class="detalle-meta__item"><strong>Tipo:</strong> Tesina</span>
                     </div>
 
                     <div class="detalle-resumen">
                         <h2 class="detalle-resumen__titulo">Resumen</h2>
-                        <p class="detalle-resumen__texto">
-                            El presente trabajo aborda los protocolos de encriptación aplicados a bases de datos 
-                            relacionales en entornos universitarios, con el objetivo de garantizar la confidencialidad, 
-                            integridad y disponibilidad de la información académica y administrativa. Se analizan los 
-                            principales vectores de ataque identificados en instituciones de educación superior, así 
-                            como las mejores prácticas para mitigarlos mediante el uso de algoritmos modernos de 
-                            cifrado y políticas de control de acceso basadas en roles.
-                        </p>
-                        <p class="detalle-resumen__texto">
-                            Los resultados demuestran que la implementación de una arquitectura de seguridad por 
-                            capas reduce en un 78% las vulnerabilidades críticas detectadas en auditorías previas, 
-                            y proporciona un marco replicable para otras instituciones del sector educativo que 
-                            busquen fortalecer su postura de ciberseguridad sin comprometer el rendimiento 
-                            operativo de sus sistemas de gestión escolar.
-                        </p>
+                        <p class="detalle-resumen__texto">El presente trabajo aborda los protocolos de encriptación aplicados a bases de datos relacionales en entornos universitarios, con el objetivo de garantizar la confidencialidad, integridad y disponibilidad de la información académica y administrativa.</p>
                     </div>
 
                     <div class="detalle-tags">
                         <span class="detalle-tag">Seguridad</span>
                         <span class="detalle-tag">Bases de Datos</span>
-                        <span class="detalle-tag">Encriptación</span>
-                        <span class="detalle-tag">Universitario</span>
                     </div>
 
-                    <!-- Botones de acción -->
                     <div class="detalle-acciones">
                         <a href="#pdf-viewer" id="btn-leer-pdf" class="btn-leer">Leer en línea</a>
                         <a href="documento.pdf" download class="download-btn">Descargar PDF</a>
                     </div>
+                </aside>
 
-                </section>
-
-                <!-- Columna derecha: visor del PDF -->
                 <section class="detalle-visor" id="pdf-viewer">
                     <h2 class="detalle-visor__titulo">Vista previa del documento</h2>
-
-                    <!-- Placeholder mostrado antes de cargar el PDF -->
                     <div class="pdf-placeholder" id="pdf-placeholder">
-                        <p>Haz click en "Leer en línea" para cargar la vista previa del documento.</p>
+                        <p>Haz click en "Leer en línea" para cargar la vista previa.</p>
                     </div>
-
-                    <!-- El iframe no tiene src inicial; se asigna por JS al hacer click en el botón -->
-                    <iframe
-                        class="pdf-iframe"
-                        id="pdf-iframe"
-                        data-src="documento.pdf"
-                        title="Vista previa del documento PDF"
-                        style="display: none;">
-                        <p>Tu navegador no soporta la vista previa de PDF.
-                            <a href="documento.pdf" class="download-btn">Descárgalo aquí</a>
-                        </p>
-                    </iframe>
+                    <iframe class="pdf-iframe" id="pdf-iframe" data-src="documento.pdf" style="display: none;"></iframe>
                 </section>
 
-            </div>
+            </section>
         </main>
 
         <footer class="l-footer">
             <div class="footer-content">
                 <p>&copy; 2026 MGA Nexus</p>
-                <div class="footer-contact">
-                    <p>Tel: (656) 123-4567</p>
-                    <p>Correo: mganexusdochub@gmail.com</p>
-                </div>
             </div>
         </footer>
-
     </div>
+    
     <script src="../js/main.js"></script>
     <script>
-        // Carga el PDF en el iframe solo cuando el usuario hace click en "Leer en línea"
         document.getElementById('btn-leer-pdf').addEventListener('click', function () {
             const iframe = document.getElementById('pdf-iframe');
             const placeholder = document.getElementById('pdf-placeholder');
-
             if (!iframe.src) {
                 iframe.src = iframe.dataset.src;
                 iframe.style.display = 'block';
