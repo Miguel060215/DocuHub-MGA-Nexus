@@ -11,7 +11,7 @@
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px var(--accion-primaria-hover);
 }
 
 .card-title {
@@ -38,8 +38,8 @@
 }
 
 .card-resultado {
-    background-color: #d8eadd;
-    border: 1px solid #90c2a7;
+    background-color: var(--blanco);
+    border: 1px solid var(--verde-suave);
     border-radius: 10px;
     padding: 1.2rem;
     margin-bottom: 1.2rem;
@@ -61,7 +61,7 @@
 
 .dotted-divider {
     border: none;
-    border-top: 1px dashed #0e976a;
+    border-top: 1px dashed var(--accion-primaria-hover);
     margin: 0.8rem 0;
     width: 100%;
 }
@@ -81,7 +81,7 @@
 }
 
 .tag-green {
-    background-color: #0e976a;
+    background-color: var(--accion-primaria-hover);
     color: #ffffff;
     padding: 0.4rem 1rem;
     border-radius: 6px;
