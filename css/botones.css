@@ -102,8 +102,8 @@ button[type="submit"]:hover,
 
 .btn-full {
     width: 100%;
-    background-color: #0e976a;
-    color: #ffffff;
+    background-color: var(--accion-primaria-hover);
+    color: var(--blanco);
     border: none;
     padding: 0.6rem;
     border-radius: 6px;
@@ -112,8 +112,8 @@ button[type="submit"]:hover,
 }
 
 .btn-ver-mas {
-    background-color: #0e976a;
-    color: #ffffff;
+    background-color: var(--accion-primaria-hover);
+    color: var(--blanco);
     border: none;
     padding: 0.5rem 1.5rem;
     border-radius: 6px;
