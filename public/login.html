@@ -10,8 +10,8 @@
     <div class="l-wrapper">
         <main class="l-main l-login-container">
             
-            <div class="logo-circle" style="margin: 0 auto 2rem auto;">
-                <img src="../assets/Logotipo.png" alt="Logo DocuHub" class="logo-img">
+            <div class="logo-circle-login" style="margin: 0 auto 2rem auto;">
+                <img src="../assets/Logotipo.png" alt="Logo DocuHub" class="logo-img-login ">
             </div>            
 
             <div class="l-form-container login-register-container">
@@ -25,9 +25,12 @@
                     <input type="email" required placeholder="correo@ejemplo.com">
 
                     <label>Ingresa tu contraseña</label>
-                    <input type="password" required placeholder="Contraseña">
+                    <div class="password-wrapper">
+                        <input id="contraseña" type="password" required placeholder="Contraseña" class="password-input">
+                        <button type="button" class="toggle-pass" class="btn-toggle">​👀​</button>
+                    </div>
 
-                    <button type="submit">INICIAR SESIÓN</button>
+                    <button type="submit" class="btn-primary">INICIAR SESIÓN</button>
                     <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 </form>
 
@@ -42,7 +45,12 @@
                     <input type="text" required placeholder="Tu segundo apellido">
 
                     <label>Carrera Universitaria</label>
-                    <input type="text" required placeholder="Tu carrera">
+                    <select required>
+                        <option value="" disabled selected>Selecciona tu carrera</option>
+                        <option value="1">Desarrollo de Software Multiplataforma</option>
+                        <option value="2">Ciberseguridad</option>
+                        <option value="3">Infraestructura de Redes Digitales</option>
+                    </select>
 
                     <label>Ingresa tu correo electrónico</label>
                     <input type="email" required placeholder="correo@ejemplo.com">
@@ -51,12 +59,29 @@
                     <input type="text" required placeholder="Nombre de usuario">
 
                     <label>Crea una contraseña</label>
-                    <input type="password" required placeholder="Contraseña">
+                    <div class="password-wrapper">
+                        <input id="contraseña1" type="password" required placeholder="Contraseña">
+                        <button type="button" class="toggle-pass" class="btn-toggle">​👀​</button>
+                    </div>
+
+                    <div id="mensajes-validacion" class="mensajes-validacion">
+                        <p>Cumple con las siguientes condiciones</p>
+                        <p id="minimo">Minimos 8 caracteres</p>
+                        <p id="mayuscula">Al menos 1 mayúscula</p>
+                        <p id="numero">Al menos 1 número</p>
+                        <p id="especial">Al menos un carácter especial</p>
+                    </div>
 
                     <label>Confirma tu contraseña</label>
-                    <input type="password" required placeholder="Confirmar contraseña">
+                    <div class="password-wrapper">
+                        <input id="contraseña2" type="password" required placeholder="Contraseña">
+                        <button type="button" class="toggle-pass" class="btn-toggle">​👀​</button>
+                    </div>
+                    <p id="coincidencia"></p>
 
-                    <button type="submit">REGISTRARSE</button>
+                    <form id="form-register" onsubmit="return validarFormulario()">
+                        <button type="submit" class="btn-primary">REGISTRARSE</button>
+                    </form>
                 </form>
             </div>
             
@@ -74,5 +99,6 @@
     </div>
     
     <script src="../js/main.js"></script>
+    <script src="../js/validacion-contraseña.js"></script>
 </body>
 </html>

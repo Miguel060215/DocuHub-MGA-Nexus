@@ -12,7 +12,14 @@
             <div class="logo-circle">
                 <img src="../assets/Logotipo.png" alt="Logo DocuHub" class="logo-img">
             </div>
-            <div class="user-info">Rol: Admin | Usuario | Cerrar sesión</div>
+            <div class="user-info">
+                <span class="role-text">Panel de Administrador</span>
+                <span class="separator">|</span>
+                <!--aqui voy a poner el nombre del usuario admin pero aun no-->
+                <span class="user-name"> nombre_usuario </span>
+                <span class="separator">|</span>
+                <a href="login.html" class="logout-link">Cerrar sesión</a>
+            </div>
         </header>
 
         <main class="l-main">
@@ -21,28 +28,30 @@
             <div class="l-dos-columnas">
                 <section class="l-content-scroll table-container">
                     <h3>TABLA DE GESTION</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Documento</th>
-                                <th>Autor</th>
-                                <th>Fecha</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Nombre doc</td>
-                                <td>Nombre autor</td>
-                                <td>Dia/mes/año</td>
-                                <td>
-                                    <button>Aprobar</button>
-                                    <button>Rechazar</button>
-                                    <button>Leer</button>
-                                </td>
-                            </tr>
-                            </tbody>
-                    </table>
+                   <table>
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Autor</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nombre doc</td>
+                            <td>Nombre autor</td>
+                            <td>Dia/mes/año</td>
+                            <td><span class="badge estado-pendiente">Pendiente</span></td>
+                            <td>
+                                <button class="btn-aprobar">Aprobar</button>
+                                <button class="btn-rechazar">Rechazar</button>
+                                <button class="btn-leer">Leer</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
                 </section>
 
                 <aside class="l-document-preview">

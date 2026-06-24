@@ -75,13 +75,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 400px;
+    max-width: 700px;
     margin: 0 auto;
     width: 100%;
 }
 
 .l-form-container {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     width: 100%;
     display: flex;
@@ -152,4 +152,14 @@
     width: 110%; 
     height: auto;
     object-fit: contain;
+}
+
+/* =============================================
+   CLASES AGREGADAS PARA LA VISTA DE DETALLE
+   ============================================= */
+
+/* Altura mínima del main en la vista detalle
+   para que el iframe tenga espacio suficiente */
+.l-main--detalle {
+    min-height: calc(100vh - 80px);
 }

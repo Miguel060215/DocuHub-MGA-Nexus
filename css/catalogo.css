@@ -1,0 +1,130 @@
+.search-container-wrapper {
+    background-color: #d8eadd;
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #90c2a7;
+}
+
+.search-form-pill {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.search-form-pill input {
+    flex: 1;
+    border: none;
+    border-radius: 25px;
+    padding: 0.8rem 1.5rem;
+    background-color: #ffffff;
+    outline: none;
+    color: var(--texto-principal);
+}
+
+.search-form-pill button {
+    border-radius: 25px;
+    padding: 0.8rem 2.5rem;
+    background-color: #0e976a;
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.l-dos-columnas-catalog {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 1.5rem;
+}
+
+.panel-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-title {
+    color: var(--texto-principal);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.scrollable-panel {
+    border: 2px solid #90c2a7;
+    border-radius: 12px;
+    padding: 1.2rem;
+    height: 550px;
+    overflow-y: auto;
+    background-color: #ffffff;
+}
+
+.scrollable-panel::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scrollable-panel::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #90c2a7;
+    margin: 4px;
+}
+
+.scrollable-panel::-webkit-scrollbar-thumb {
+    background-color: #0e976a;
+    border-radius: 10px;
+}
+
+.filtro-grupo {
+    margin-bottom: 1.5rem;
+}
+
+.filtro-grupo h4 {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: var(--texto-principal);
+    font-weight: normal;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.check-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #0e976a;
+    color: #ffffff;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.check-btn input[type="checkbox"] {
+    margin: 0;
+    width: 14px;
+    height: 14px;
+    appearance: auto;
+    accent-color: #ffffff;
+}
+
+@media (max-width: 992px) {
+    .l-dos-columnas-catalog {
+        grid-template-columns: 1fr;
+    }
+
+    .scrollable-panel {
+        height: 400px;
+    }
+
+    .search-form-pill {
+        flex-direction: column;
+    }
+}

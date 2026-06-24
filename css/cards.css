@@ -1,17 +1,17 @@
 .card {
     background-color: var(--blanco);
-    border: 1.5px solid var(--accion-primaria); 
+    border: 1px solid var(--accion-primaria);
     border-radius: 8px;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
 }
-
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px var(--accion-primaria-hover);
 }
 
 .card-title {
@@ -33,6 +33,57 @@
     font-size: 0.95rem;
     color: var(--texto-secundario);
     margin-bottom: 1.5rem;
-    flex-grow: 1; 
+    flex-grow: 1;
     line-height: 1.5;
+}
+
+.card-resultado {
+    background-color: var(--blanco);
+    border: 1px solid var(--verde-suave);
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-resultado-header h4 {
+    margin: 0 0 0.4rem 0;
+    color: var(--texto-principal);
+    font-size: 1.05rem;
+}
+
+.card-resultado-header p {
+    margin: 0 0 0.4rem 0;
+    font-size: 0.85rem;
+    color: var(--texto-principal);
+}
+
+.dotted-divider {
+    border: none;
+    border-top: 1px dashed var(--accion-primaria-hover);
+    margin: 0.8rem 0;
+    width: 100%;
+}
+
+.card-resultado-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tags-green {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag-green {
+    background-color: var(--accion-primaria-hover);
+    color: #ffffff;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
 }
