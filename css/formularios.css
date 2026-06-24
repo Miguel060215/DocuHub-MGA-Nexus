@@ -1,9 +1,21 @@
-.l-form-container, 
-form {
+.l-form-container {
+    max-width: 650px;
+    margin: 0 auto;
     background-color: var(--blanco);
     padding: 2rem;
     border-radius: 8px;
     border: 1px solid var(--borde-suave);
+}
+
+.upload-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.upload-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
 }
 
 label {
@@ -77,7 +89,6 @@ fieldset label {
     width: 100%;
 }
 
-
 .form-toggle {
     display: flex;
     justify-content: center;
@@ -112,6 +123,66 @@ fieldset label {
     text-decoration: underline;
 }
 
+
+@media (max-width: 768px) {
+    .l-form-container {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+    .upload-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .l-form-container {
+        max-width: 95%;
+        padding: 1rem;
+    }
+    .upload-title {
+        font-size: 1.3rem;
+    }
+    label {
+        font-size: 0.9rem;
+    }
+    input,
+    select,
+    textarea {
+        font-size: 0.9rem;
+    }
+    .upload-actions {
+        justify-content: center;
+    }
+    .upload-actions button {
+        width: 100%;
+    }
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px dashed var(--borde-suave);
+    border-radius: 8px;
+    background-color: var(--blanco);
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]:hover {
+    border-color: var(--accion-primaria);
+    background-color: rgba(16, 185, 129, 0.05);
+}
+
+.file-help {
+    display: block;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+}
+
+
 .l-login-container .logo-circle {
     width: 120px;
     height: 120px;
@@ -122,16 +193,15 @@ fieldset label {
     height: auto;
 }
 
-
-
 @media (min-width: 768px) {
     .login-register-container {
         max-width: 900px !important;
     }
 }
-.mensajes-validacion{
+
+.mensajes-validacion {
     font-size: 0.8rem;
-    margin: 10px 0px 25px 0px ;
+    margin: 10px 0px 25px 0px;
 }
 
 #mensajes-validacion p {
@@ -139,12 +209,14 @@ fieldset label {
     color: rgb(0, 0, 0); 
     transition: color 0.3s;
 }
+
 .password-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 }
-.password-wrapper input{
+
+.password-wrapper input {
     width: 100%;
     padding-right: 40px;
     box-sizing: border-box;
@@ -160,8 +232,8 @@ fieldset label {
     margin-bottom: 15px;
 }
 
-/*tamano de logo exclusivo para el login*/
-.logo-circle-login{
+/* Tamaño de logo exclusivo para el login */
+.logo-circle-login {
     height: 210px;
     width: 210px;
     border-radius: 50%;
@@ -170,8 +242,8 @@ fieldset label {
     align-items: center;
     justify-content: center;
 }
-.logo-img-login{
-    
+
+.logo-img-login {
     height: 100%;
     width: 100%;
     object-fit: cover;
