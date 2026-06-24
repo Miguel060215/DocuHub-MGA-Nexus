@@ -133,8 +133,7 @@ fieldset label {
 .forgot-password:hover {
     color: var(--texto-principal);
     text-decoration: underline;
-<<<<<<< Updated upstream
-=======
+
 }
 
 /**/
@@ -206,5 +205,4 @@ input[type="file"]:hover{
     margin-bottom:1.5rem;
     color: var(--texto-secundario);
     font-size:0.85rem;
->>>>>>> Stashed changes
 }
