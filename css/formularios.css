@@ -1,14 +1,19 @@
+
+
 .l-form-container {
-    max-width: 650px;
+    max-width: 1000px;
     margin: 0 auto;
-    background-color: var(--blanco);
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--borde-suave);
+    background: #e8f5ec;
+    border: 2px solid var(--accion-primaria);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
 
 .upload-title {
     text-align: center;
+    color: #0f5132;
+    font-size: 2rem;
     margin-bottom: 25px;
 }
 
@@ -33,7 +38,7 @@ textarea {
     width: 100%;
     padding: 0.8rem;
     background-color: var(--blanco);
-    border: 1px solid var(--borde-suave);
+    border: 2px solid var(--accion-primaria);
     border-radius: 4px;
     color: var(--texto-principal);
     margin-bottom: 1.5rem;
@@ -48,8 +53,8 @@ textarea::placeholder {
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: var(--accion-primaria);
-    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2); 
+    border-color: var(--estructura-oscura);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
 }
 
 fieldset {
@@ -160,9 +165,9 @@ fieldset label {
 
 input[type="file"] {
     width: 100%;
-    padding: 12px;
-    border: 2px dashed var(--borde-suave);
-    border-radius: 8px;
+    padding: 20px;
+    border: 2px solid var(--accion-primaria);
+    border-radius: 12px;
     background-color: var(--blanco);
     cursor: pointer;
     margin-bottom: 1.5rem;
@@ -170,8 +175,8 @@ input[type="file"] {
 }
 
 input[type="file"]:hover {
-    border-color: var(--accion-primaria);
-    background-color: rgba(16, 185, 129, 0.05);
+    border-color: #179c69;
+    background-color: #f2fbf5;
 }
 
 .file-help {
@@ -247,4 +252,21 @@ input[type="file"]:hover {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.btn-primary,
+.btn-secondary {
+    background-color: #179c69;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    background-color: #127d55;
 }
