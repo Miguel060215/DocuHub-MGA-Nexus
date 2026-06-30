@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuHub - Buscar</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="l-wrapper">
+         <header class="l-header">
+            <div class="logo-circle">
+                <img src="../assets/Logotipo.png" alt="Logo DocuHub" class="logo-img">
+            </div>
+
+            <nav class="l-nav-desktop">
+                <a href="../index.html">INICIO</a>
+                <a href="buscar.html">BUSCAR</a>
+                <a href="subir.html">SUBIR</a>
+            </nav>
+            <div class="l-nav-mobile">
+                <span id="btn-menu">☰</span>
+                <ul class="mobile-menu" id="menu-desplegable">
+                    <li><a href="../index.html">INICIO</a></li>
+                    <li><a href="buscar.html">BUSCAR</a></li>
+                    <li><a href="subir.html">SUBIR</a></li>
+                </ul>
+            </div>
+            <a class="user-info" href="login.html">LOGIN</a>
+        </header>
+
+        <main class="l-main">
+            <div class="search-container-wrapper">
+                <form class="search-form-pill">
+                    <input type="text" placeholder="Busqueda por palabra clave">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+
+            <div class="l-dos-columnas-catalog">
+                
+                <div class="panel-container">
+                    <h3 class="panel-title">Filtros</h3>
+                    <aside class="scrollable-panel">
+                        <div class="filtro-grupo">
+                            <h4>Carreras</h4>
+                            <div class="checkbox-grid">
+                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
+                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
+                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
+                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
+                            </div>
+                            <button class="btn-full">Mas carreras</button>
+                        </div>
+
+                        <div class="filtro-grupo">
+                            <h4>Tipos de documento</h4>
+                            <div class="checkbox-grid">
+                                <label class="check-btn"><input type="checkbox"> Tesina</label>
+                                <label class="check-btn"><input type="checkbox"> Reporte</label>
+                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
+                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="panel-container">
+                    <h3 class="panel-title">Resultados</h3>
+                    <section class="scrollable-panel">
+                        
+                        <article class="card-resultado">
+                            <div class="card-resultado-header">
+                                <h4>Titulo: Nombre Doc</h4>
+                                <p>Autor: Nombre Autor</p>
+                                <p>Abstract: resumen del documento</p>
+                            </div>
+                            <hr class="dotted-divider">
+                            <div class="card-resultado-footer">
+                                <div class="tags-green">
+                                    <span class="tag-green">Etiqueta</span>
+                                    <span class="tag-green">Etiqueta</span>
+                                    <span class="tag-green">Etiqueta</span>
+                                </div>
+                                <button class="btn-ver-mas" onclick="window.location.href='documento.html'">Ver Mas</button>
+                            </div>
+                        </article>
+
+                        <article class="card-resultado">
+                            <div class="card-resultado-header">
+                                <h4>Titulo: Nombre Doc</h4>
+                                <p>Autor: Nombre Autor</p>
+                                <p>Abstract: resumen del documento</p>
+                            </div>
+                            <hr class="dotted-divider">
+                            <div class="card-resultado-footer">
+                                <div class="tags-green">
+                                    <span class="tag-green">Etiqueta</span>
+                                </div>
+                                <button class="btn-ver-mas" onclick="window.location.href='documento.html'">Ver Mas</button>
+                            </div>
+                        </article>
+
+                        <article class="card-resultado">
+                            <div class="card-resultado-header">
+                                <h4>Titulo: Nombre Doc</h4>
+                                <p>Autor: Nombre Autor</p>
+                                <p>Abstract: resumen del documento</p>
+                            </div>
+                            <hr class="dotted-divider">
+                            <div class="card-resultado-footer">
+                                <div class="tags-green">
+                                    <span class="tag-green">Etiqueta</span>
+                                </div>
+                                <button class="btn-ver-mas" onclick="window.location.href='documento.html'">Ver Mas</button>
+                            </div>
+                        </article>
+
+                        <article class="card-resultado">
+                            <div class="card-resultado-header">
+                                <h4>Titulo: Nombre Doc</h4>
+                                <p>Autor: Nombre Autor</p>
+                                <p>Abstract: resumen del documento</p>
+                            </div>
+                            <hr class="dotted-divider">
+                            <div class="card-resultado-footer">
+                                <div class="tags-green">
+                                    <span class="tag-green">Etiqueta</span>
+                                </div>
+                                <button class="btn-ver-mas" onclick="window.location.href='documento.html'">Ver Mas</button>
+                            </div>
+                        </article>
+
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <footer class="l-footer">
+            <div class="footer-content">
+                <p>&copy; 2026 MGA Nexus</p>
+                <div class="footer-contact">
+                    <p>Tel: (656) 123-4567</p>
+                    <p>Correo: mganexusdochub@gmail.com</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
