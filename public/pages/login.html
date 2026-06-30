@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuHub - Login / Registro</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="l-wrapper">
+        <main class="l-main l-login-container">
+            
+            <div class="logo-circle-login" style="margin: 0 auto 2rem auto;">
+                <img src="../assets/Logotipo.png" alt="Logo DocuHub" class="logo-img-login ">
+            </div>            
+
+            <div class="l-form-container login-register-container">
+                <div class="form-toggle">
+                    <button id="btn-show-login" class="active">Iniciar</button>
+                    <button id="btn-show-register">Registrar</button>
+                </div>
+
+                <form id="form-login" action="../index.html">
+                    <label>Ingresa tu correo electrónico</label>
+                    <input type="email" required placeholder="correo@ejemplo.com">
+
+                    <label>Ingresa tu contraseña</label>
+                    <div class="password-wrapper">
+                        <input id="contraseña" type="password" required placeholder="Contraseña" class="password-input">
+                        <button type="button" class="toggle-pass" class="btn-toggle">​👀​</button>
+                    </div>
+
+                    <button type="submit" class="btn-primary">INICIAR SESIÓN</button>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </form>
+
+                <form id="form-register" action="../index.html" class="hidden">
+                    <label>Nombre(s)</label>
+                    <input type="text" required placeholder="Tu nombre">
+
+                    <label>Apellido Paterno</label>
+                    <input type="text" required placeholder="Tu primer apellido">
+
+                    <label>Apellido Materno</label>
+                    <input type="text" required placeholder="Tu segundo apellido">
+
+                    <label>Carrera Universitaria</label>
+                    <select required>
+                        <option value="" disabled selected>Selecciona tu carrera</option>
+                        <option value="1">Desarrollo de Software Multiplataforma</option>
+                        <option value="2">Ciberseguridad</option>
+                        <option value="3">Infraestructura de Redes Digitales</option>
+                    </select>
+
+                    <label>Ingresa tu correo electrónico</label>
+                    <input type="email" required placeholder="correo@ejemplo.com">
+
+                    <label>Ingresa tu nombre de usuario único</label>
+                    <input type="text" required placeholder="Nombre de usuario">
+
+                    <label>Crea una contraseña</label>
+                    <div class="password-wrapper">
+                        <input id="contraseña1" type="password" required placeholder="Contraseña">
+                        <button type="button" class="toggle-pass" class="btn-toggle">​👀​</button>
+                    </div>
+
+                    <div id="mensajes-validacion" class="mensajes-validacion">
+                        <p>Cumple con las siguientes condiciones</p>
+                        <p id="minimo">Minimos 8 caracteres</p>
+                        <p id="mayuscula">Al menos 1 mayúscula</p>
+                        <p id="numero">Al menos 1 número</p>
+                        <p id="especial">Al menos un carácter especial</p>
+                    </div>
+
+                    <label>Confirma tu contraseña</label>
+                    <div class="password-wrapper">
+                        <input id="contraseña2" type="password" required placeholder="Contraseña">
+                        <button type="button" class="toggle-pass" class="btn-toggle">​👀​</button>
+                    </div>
+                    <p id="coincidencia"></p>
+
+                    <form id="form-register" onsubmit="return validarFormulario()">
+                        <button type="submit" class="btn-primary">REGISTRARSE</button>
+                    </form>
+                </form>
+            </div>
+            
+        </main>
+        
+        <footer class="l-footer">
+            <div class="footer-content">
+                <p>&copy; 2026 MGA Nexus</p>
+                <div class="footer-contact">
+                    <p>Tel: (656) 123-4567</p>
+                    <p>Correo: mganexusdochub@gmail.com</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/validacion-contraseña.js"></script>
+</body>
+</html>
