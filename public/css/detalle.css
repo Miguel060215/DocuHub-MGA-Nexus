@@ -1,174 +1,119 @@
-/* =============================================
-   DETALLE.CSS — Estilos definitivos (Unificados)
-   ============================================= */
-
-/* Contenedor principal que unifica la info y el visor con borde verde */
 .l-detalle-wrapper {
-    display: grid;
-    grid-template-columns: 420px 1fr; /* Izquierda fija, derecha flexible */
-    gap: 2rem;
-    padding: 2rem;
-    border: 2px solid #90c2a7; /* Borde verde unificado */
-    border-radius: 12px;
-    background-color: #ffffff;
-    margin-top: 1.5rem;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-surface);
+  margin-top: 1.5rem;
+  align-items: start;
+  box-shadow: var(--shadow-sm);
 }
 
-/* --- Botón Volver --- */
-.back-btn {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    margin-bottom: 1rem;
-    background-color: var(--accion-primaria);
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.back-btn:hover {
-    background-color: var(--accion-secundaria);
-}
-
-/* --- Columna información --- */
 .detalle-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .detalle-titulo {
-    font-family: var(--fuente-titulos);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--texto-principal);
-    line-height: 1.35;
-    margin: 0;
+  font-family: var(--fuente-titulos);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+  line-height: 1.35;
+  margin: 0;
 }
 
 .detalle-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    padding: 1rem 0;
-    border-top: 2px solid var(--accion-primaria);
-    border-bottom: 1px solid var(--borde-suave);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 0;
+  border-top: 2px solid var(--accion-primaria-texto);
+  border-bottom: 1px solid var(--borde-suave);
 }
 
 .detalle-meta__item {
-    font-family: var(--fuente-principal);
-    font-size: 0.95rem;
-    color: var(--texto-secundario);
+  font-family: var(--fuente-principal);
+  font-size: 0.95rem;
+  color: var(--texto-secundario);
 }
 
 .detalle-meta__item strong {
-    color: var(--texto-principal);
-    font-weight: 600;
+  color: var(--texto-principal);
+  font-weight: 600;
 }
 
-/* --- Etiquetas --- */
 .detalle-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .detalle-tag {
-    background-color: var(--accion-secundaria);
-    color: var(--accion-secundaria-texto);
-    border: 1px solid var(--borde-suave);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.82rem;
+  background-color: var(--accion-primaria-suave);
+  color: var(--accion-primaria-texto);
+  border: 1px solid var(--accion-primaria-borde-suave);
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
 }
 
-/* --- Resumen --- */
 .detalle-resumen__titulo {
-    font-family: var(--fuente-titulos);
-    font-size: 1.1rem;
-    font-weight: 600;
+  font-family: var(--fuente-titulos);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--texto-principal);
 }
 
 .detalle-resumen__texto {
-    font-family: var(--fuente-principal);
-    font-size: 0.97rem;
-    color: var(--texto-secundario);
-    line-height: 1.8;
-    text-align: justify;
+  font-family: var(--fuente-principal);
+  font-size: 0.97rem;
+  color: var(--texto-secundario);
+  line-height: 1.8;
+  text-align: justify;
 }
 
-/* --- Botones de Acción (Leer/Descargar) --- */
 .detalle-acciones {
-    display: flex;
-    gap: 1rem;
-    padding-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  padding-top: 0.5rem;
 }
 
-.btn-leer {
-    display: inline-block;
-    padding: 0.8rem 1.6rem;
-    background-color: transparent;
-    color: var(--accion-primaria);
-    border: 2px solid var(--accion-primaria);
-    border-radius: 10px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn-leer:hover {
-    background-color: var(--accion-primaria);
-    color: #ffffff;
-}
-
-.download-btn {
-    display: inline-block;
-    padding: 0.8rem 1.6rem;
-    background-color: var(--accion-primaria);
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s, background 0.3s;
-}
-
-.download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-/* --- Visor PDF --- */
 .detalle-visor {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detalle-visor__titulo {
+  color: var(--texto-principal);
 }
 
 .pdf-placeholder, .pdf-iframe {
-    width: 100%;
-    height: 600px;
-    border-radius: 8px;
+  width: 100%;
+  height: 600px;
+  border-radius: var(--radius-md);
 }
 
 .pdf-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px dashed #90c2a7;
-    background-color: #fcfcfc;
-    text-align: center;
-    padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--borde-medio);
+  background-color: var(--bg-base);
+  text-align: center;
+  padding: 2rem;
+  color: var(--texto-secundario);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
-    .l-detalle-wrapper {
-        grid-template-columns: 1fr;
-    }
+  .l-detalle-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
