@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@600;700&display=swap');
+
+@import url('variables.css');
+@import url('reset.css');
+@import url('layout.css');
+@import url('navbar.css');
+@import url('footer.css');
+@import url('botones.css');
+@import url('formularios.css');
+@import url('cards.css');
+@import url('inicio.css');
+@import url('catalogo.css');
+@import url('detalle.css');
+@import url('admin.css');
+@import url('slider.css');

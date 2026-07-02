@@ -1,0 +1,26 @@
+{
+  "name": "docuhub-mga-nexus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miguel060215/DocuHub-MGA-Nexus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Miguel060215/DocuHub-MGA-Nexus/issues"
+  },
+  "homepage": "https://github.com/Miguel060215/DocuHub-MGA-Nexus#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.5"
+  }
+}

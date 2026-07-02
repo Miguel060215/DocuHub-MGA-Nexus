@@ -1,0 +1,51 @@
+:root {
+  --blanco: #FFFFFF;
+  --negro: #000000;
+
+  --bg-base: #0d1420;
+  --bg-surface: #16202f;
+  --bg-surface-alt: #1c2836;
+  --estructura-oscura: #1e293b;
+
+  --borde-suave: #2a3646;
+  --borde-medio: #3a4757;
+
+  --texto-principal: #eef1f6;
+  --texto-secundario: #9aa7b8;
+
+  --accion-primaria: #08684e;
+  --accion-primaria-hover: #0d8a68;
+  --accion-primaria-suave: rgba(16, 163, 127, 0.12);
+  --accion-primaria-borde-suave: rgba(16, 163, 127, 0.35);
+  --accion-primaria-texto: #2dd4a7;
+
+  --accion-secundaria: #212c3d;
+  --accion-secundaria-texto: #cbd5e1;
+
+  --peligro: #ef4444;
+  --peligro-hover: #f87171;
+
+  --estado-pendiente-bg: rgba(217, 119, 6, 0.15);
+  --estado-pendiente-texto: #fbbf24;
+  --estado-pendiente-borde: rgba(217, 119, 6, 0.35);
+  --estado-aprobado-bg: rgba(16, 185, 129, 0.15);
+  --estado-aprobado-texto: #34d399;
+  --estado-aprobado-borde: rgba(16, 185, 129, 0.35);
+  --estado-rechazado-bg: rgba(239, 68, 68, 0.15);
+  --estado-rechazado-texto: #f87171;
+  --estado-rechazado-borde: rgba(239, 68, 68, 0.35);
+
+  --fuente-titulos: 'Montserrat', sans-serif;
+  --fuente-principal: 'Inter', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 14px 32px rgba(0, 0, 0, 0.45);
+
+  --transicion: 0.25s ease;
+}

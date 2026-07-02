@@ -1,0 +1,18 @@
+PROYECTO: DocuHub - MGA-Nexus
+DESCRIPCIÓN: Sistema de gestión y repositorio de documentos académicos.
+
+ESTRUCTURA DE CARPETAS Y ARCHIVOS:
+
+- config/           : Contiene 'db.js', encargado de la conexión y configuración del Pool de MySQL.
+- controllers/      : Lógica de negocio; procesa las peticiones que llegan desde las rutas.
+- models/           : Consultas SQL para interactuar con la base de datos bds_MGA_Nexus.
+- public/           : Carpeta raíz para el Frontend (servida por Express).
+  - assets/         : Recursos visuales (imágenes, logos).
+  - css/            : Hojas de estilo para el diseño visual.
+  - js/             : Scripts del lado del cliente (lógica del slider, menú, etc.).
+  - pages/          : Archivos HTML adicionales (buscar, subir, login, etc.).
+  - index.html      : Página principal de aterrizaje.
+- routes/           : Definición de endpoints de la API para conectar el front con el back.
+- .env              : Variables de entorno secretas (Credenciales de BD).
+- index.js          : Servidor principal (Express) y punto de entrada de la aplicación.
+- package.json      : Listado de dependencias y configuración del proyecto.

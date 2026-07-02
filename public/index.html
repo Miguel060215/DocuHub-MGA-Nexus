@@ -4,39 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DocuHub - Inicio</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <div class="l-wrapper">
         <header class="l-header">
             <div class="logo-circle">
-                <img src="../assets/Logotipo.png" alt="Logo DocuHub" class="logo-img">
+                <img src="/assets/Logotipo.png" alt="Logo DocuHub" class="logo-img">
             </div>
 
             <nav class="l-nav-desktop">
-                <a href="index.html">INICIO</a>
-                <a href="buscar.html">BUSCAR</a>
-                <a href="subir.html">SUBIR</a>
+                <a href="/">INICIO</a>
+                <a href="/pages/buscar.html">BUSCAR</a>
+                <a href="/pages/subir.html">SUBIR</a>
             </nav>
             <div class="l-nav-mobile">
-                <span id="btn-menu" >☰</span>
+                <span id="btn-menu">☰</span>
                 <ul class="mobile-menu" id="menu-desplegable">
-                    <li><a href="index.html">INICIO</a></li>
-                    <li><a href="buscar.html">BUSCAR</a></li>
-                    <li><a href="subir.html">SUBIR</a></li>
+                    <li><a href="/">INICIO</a></li>
+                    <li><a href="/pages/buscar.html">BUSCAR</a></li>
+                    <li><a href="/pages/subir.html">SUBIR</a></li>
                 </ul>
             </div>
-            <a class="user-info" href="login.html">LOGIN</a>
+            <a class="user-info" href="/pages/login.html">LOGIN</a>
         </header>
 
         <main class="l-main">
             <section class="search-section l-form-container">
                 <h1>REPOSITORIO DE DOCUMENTOS DE INVESTIGACIÓN</h1>
-                <form action="buscar.html" class="search-form">
+                <form action="/pages/buscar.html" class="search-form">
                     <input type="text" placeholder="BARRA DE BÚSQUEDA">
                     <button type="submit" class="btn-primary">BUSCAR</button>
                 </form>
-                <a href="buscar.html" class="link-advanced">IR A LA SECCIÓN DE BÚSQUEDA AVANZADA</a>
+                <a href="/pages/buscar.html" class="link-advanced">IR A LA SECCIÓN DE BÚSQUEDA AVANZADA</a>
+            </section>
+
+            <section class="slider-container">
+                <div class="slider">
+                        <div class="slide">
+                        <div class="zoom-container">
+                             <img src="/assets/Banner1.png" alt="Banner 1" class="slider-img">
+                        </div>
+                        <div class="banner-content">
+                            <h2>Detrás de DocuHub</h2>
+                            <p>Nacimos con una misión: simplificar la vida académica a través de la organización inteligente</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="zoom-container">
+                             <img src="/assets/Banner2.png" alt="Banner 2" class="slider-img">
+                        </div>
+                        <div class="banner-content">
+                            <h2>Tu biblioteca académica centralizada.</h2>
+                            <p>Organiza tus apuntes y comparte recursos con DocuHub</p>
+                            <button class="btn-cta" onclick="window.location.href='/pages/buscar.html'">Explorar Documentos</button>
+                        </div>
+                    </div>
+                     <div class="slide">
+                        <div class="zoom-container">
+                             <img src="/assets/Banner3.png" alt="Banner 3" class="slider-img">
+                        </div>
+                        <div class="banner-content">
+                            <h2>¿Tienes apuntes de calidad?</h2>
+                            <p>Ayuda a otros estudiantes a alcanzar sus metas compartiendo tu material. ¡Sé parte de la red de conocimiento!</p>
+                            <button class="btn-cta" onclick="window.location.href='/pages/subir.html'">Subir Archivos</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="prev-btn" aria-label="Anterior">❮</button>
+                <button class="next-btn" aria-label="Siguiente">❯</button>
+
+                <div class="slider-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
             </section>
 
             <section class="novedades-section">
@@ -51,7 +94,7 @@
                         <p class="card-excerpt">
                             Evaluación de rendimiento en estructuras de datos avanzadas para aplicaciones web escalables...
                         </p>
-                        <a href="detalle.html" class="btn-outline btn-block">VER DOCUMENTO</a>
+                        <a href="/pages/documento.html" class="btn-outline btn-block">VER DOCUMENTO</a>
                     </article>
 
                     <article class="card">
@@ -62,7 +105,7 @@
                         <p class="card-excerpt">
                             Protocolos de encriptación aplicados a bases de datos relacionales en entornos universitarios...
                         </p>
-                        <a href="detalle.html" class="btn-outline btn-block">VER DOCUMENTO</a>
+                        <a href="/pages/documento.html" class="btn-outline btn-block">VER DOCUMENTO</a>
                     </article>
 
                     <article class="card">
@@ -73,7 +116,7 @@
                         <p class="card-excerpt">
                             Comparativa entre frameworks modernos para el desarrollo ágil de aplicaciones móviles y de escritorio...
                         </p>
-                        <a href="detalle.html" class="btn-outline btn-block">VER DOCUMENTO</a>
+                        <a href="/pages/documento.html" class="btn-outline btn-block">VER DOCUMENTO</a>
                     </article>
 
                     <article class="card">
@@ -84,97 +127,8 @@
                         <p class="card-excerpt">
                             Estrategias para la reducción de latencia en redes corporativas utilizando hardware de nueva generación...
                         </p>
-                        <a href="detalle.html" class="btn-outline btn-block">VER DOCUMENTO</a>
+                        <a href="/pages/documento.html" class="btn-outline btn-block">VER DOCUMENTO</a>
                     </article>
-
-                    <article class="card">
-                        <h3 class="card-title">Análisis de Algoritmos</h3>
-                        <div class="card-meta">
-                            <span>Autor: María García</span> | <span>Carrera: Redes</span>
-                        </div>
-                        <p class="card-excerpt">
-                            Evaluación de rendimiento en estructuras de datos avanzadas para aplicaciones web escalables...
-                        </p>
-                        <a href="detalle.html" class="btn-outline btn-block">VER DOCUMENTO</a>
-                    </article>
-
-                    <article class="card">
-                        <h3 class="card-title">Implementación de Seguridad</h3>
-                        <div class="card-meta">
-                            <span>Autor: Carlos Ruiz</span> | <span>Carrera: Ciberseguridad</span>
-                        </div>
-                        <p class="card-excerpt">
-                            Protocolos de encriptación aplicados a bases de datos relacionales en entornos universitarios...
-                        </p>
-                        <a href="detalle.html" class="btn-outline btn-block">VER DOCUMENTO</a>
-                    </article>
-
-                    <article class="card">
-                        <h3 class="card-title">Desarrollo Multiplataforma</h3>
-                        <div class="card-meta">
-                            <span>Autor: Ana López</span> | <span>Carrera: Software</span>
-                        </div>
-                        <p class="card-excerpt">
-                            Comparativa entre frameworks modernos para el desarrollo ágil de aplicaciones móviles y de escritorio...
-                        </p>
-                        <a href="detalle.html" class="btn-outline btn-block">VER DOCUMENTO</a>
-                    </article>
-
-                    <article class="card">
-                        <h3 class="card-title">Optimización de Redes</h3>
-                        <div class="card-meta">
-                            <span>Autor: Luis Torres</span> | <span>Carrera: Infraestructura</span>
-                        </div>
-                        <p class="card-excerpt">
-                            Estrategias para la reducción de latencia en redes corporativas utilizando hardware de nueva generación...
-                        </p>
-                        <a href="detalle.html" class="btn-outline btn-block">VER DOCUMENTO</a>
-                    </article>
-
-                    <article class="card">
-                        <h3 class="card-title">Análisis de Algoritmos</h3>
-                        <div class="card-meta">
-                            <span>Autor: María García</span> | <span>Carrera: Redes</span>
-                        </div>
-                        <p class="card-excerpt">
-                            Evaluación de rendimiento en estructuras de datos avanzadas para aplicaciones web escalables...
-                        </p>
-                        <a href="detalle.html" class="btn-outline btn-block">VER DOCUMENTO</a>
-                    </article>
-
-                    <article class="card">
-                        <h3 class="card-title">Implementación de Seguridad</h3>
-                        <div class="card-meta">
-                            <span>Autor: Carlos Ruiz</span> | <span>Carrera: Ciberseguridad</span>
-                        </div>
-                        <p class="card-excerpt">
-                            Protocolos de encriptación aplicados a bases de datos relacionales en entornos universitarios...
-                        </p>
-                        <a href="detalle.html" class="btn-outline btn-block">VER DOCUMENTO</a>
-                    </article>
-
-                    <article class="card">
-                        <h3 class="card-title">Desarrollo Multiplataforma</h3>
-                        <div class="card-meta">
-                            <span>Autor: Ana López</span> | <span>Carrera: Software</span>
-                        </div>
-                        <p class="card-excerpt">
-                            Comparativa entre frameworks modernos para el desarrollo ágil de aplicaciones móviles y de escritorio...
-                        </p>
-                        <a href="detalle.html" class="btn-outline btn-block">VER DOCUMENTO</a>
-                    </article>
-
-                    <article class="card">
-                        <h3 class="card-title">Optimización de Redes</h3>
-                        <div class="card-meta">
-                            <span>Autor: Luis Torres</span> | <span>Carrera: Infraestructura</span>
-                        </div>
-                        <p class="card-excerpt">
-                            Estrategias para la reducción de latencia en redes corporativas utilizando hardware de nueva generación...
-                        </p>
-                        <a href="detalle.html" class="btn-outline btn-block">VER DOCUMENTO</a>
-                    </article>
-
                 </div>
             </section>
         </main>
@@ -189,6 +143,7 @@
             </div>
         </footer>
     </div>
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/slider.js"></script>
 </body>
 </html>

@@ -1,0 +1,119 @@
+.l-detalle-wrapper {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-surface);
+  margin-top: 1.5rem;
+  align-items: start;
+  box-shadow: var(--shadow-sm);
+}
+
+.detalle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.detalle-titulo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.detalle-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 0;
+  border-top: 2px solid var(--accion-primaria-texto);
+  border-bottom: 1px solid var(--borde-suave);
+}
+
+.detalle-meta__item {
+  font-family: var(--fuente-principal);
+  font-size: 0.95rem;
+  color: var(--texto-secundario);
+}
+
+.detalle-meta__item strong {
+  color: var(--texto-principal);
+  font-weight: 600;
+}
+
+.detalle-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.detalle-tag {
+  background-color: var(--accion-primaria-suave);
+  color: var(--accion-primaria-texto);
+  border: 1px solid var(--accion-primaria-borde-suave);
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.detalle-resumen__titulo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--texto-principal);
+}
+
+.detalle-resumen__texto {
+  font-family: var(--fuente-principal);
+  font-size: 0.97rem;
+  color: var(--texto-secundario);
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.detalle-acciones {
+  display: flex;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.detalle-visor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detalle-visor__titulo {
+  color: var(--texto-principal);
+}
+
+.pdf-placeholder, .pdf-iframe {
+  width: 100%;
+  height: 600px;
+  border-radius: var(--radius-md);
+}
+
+.pdf-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--borde-medio);
+  background-color: var(--bg-base);
+  text-align: center;
+  padding: 2rem;
+  color: var(--texto-secundario);
+}
+
+@media (max-width: 1024px) {
+  .l-detalle-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
