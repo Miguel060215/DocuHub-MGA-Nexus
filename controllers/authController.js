@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const Usuario = require('../models/usuarioModel');
 const axios = require('axios');
 
@@ -51,8 +52,19 @@ const authController = {
                 return res.status(400).json({ message: 'Contraseña incorrecta' });
             }
 
+            const token = jwt.sign(
+                { id_usuario: usuario.id_usuario, nombre_usuario: usuario.nombre_usuario, rol: usuario.rol},
+                process.env.JWT_SECRET,
+                { expiresIn: '2h' }
+            );
+
             console.log(`Login exitoso para: ${usuario.nombre_usuario} (Email: ${usuario.correo})`);
-            res.status(200).json({ message: 'Login exitoso' });
+            res.status(200).json({ 
+                message: 'Login exitoso', 
+                token, 
+                rol: usuario.rol, 
+                nombre_usuario: usuario.nombre_usuario 
+            });
         } catch (error) {
             res.status(500).json({ message: 'Error en el servidor', error: error.message });
         }

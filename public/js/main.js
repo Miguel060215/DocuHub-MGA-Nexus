@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    if (formLogin) {
+   if (formLogin) {
         formLogin.addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -90,7 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
                 const result = await response.json();
                 if (response.ok) {
-                    window.location.href = '/index.html';
+                    localStorage.setItem('token', result.token);
+                    localStorage.setItem('rol', result.rol);
+
+                    if (result.rol === 'administrador') {
+                        window.location.href = '/pages/admin.html';
+                    } else {
+                        window.location.href = '/index.html';
+                    }
                 } else {
                     alert(result.message);
                     grecaptcha.reset(WIDGET_LOGIN);
