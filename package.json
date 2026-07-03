@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Miguel060215/DocuHub-MGA-Nexus#readme",
   "dependencies": {
+    "axios": "^1.18.1",
+    "bcryptjs": "^3.0.3",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mysql2": "^3.22.5"

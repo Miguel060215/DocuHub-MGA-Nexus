@@ -205,3 +205,8 @@ input[type="file"]:hover {
     width: 100%;
   }
 }
+.capcha {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 50px 0;
+}

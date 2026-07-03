@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DocuHub - Login / Registro</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div class="l-wrapper">
         <main class="l-main l-login-container">
             
             <div class="logo-circle-login" style="margin: 0 auto 2rem auto;">
-                <img src="../assets/Logotipo.png" alt="Logo DocuHub" class="logo-img-login ">
+                <img src="../assets/Logotipo.png" alt="Logo DocuHub" class="logo-img-login">
             </div>            
 
             <div class="l-form-container login-register-container">
@@ -20,21 +21,27 @@
                     <button id="btn-show-register">Registrar</button>
                 </div>
 
-                <form id="form-login" action="../index.html">
+                <!-- Formulario de Login -->
+                <form id="form-login">
                     <label>Ingresa tu correo electrónico</label>
                     <input type="email" required placeholder="correo@ejemplo.com">
 
                     <label>Ingresa tu contraseña</label>
                     <div class="password-wrapper">
-                        <input id="contraseña" type="password" required placeholder="Contraseña" class="password-input">
-                        <button type="button" class="toggle-pass" class="btn-toggle">​👀​</button>
+                        <input type="password" required placeholder="Contraseña" class="password-input">
+                        <button type="button" class="toggle-pass">👀</button>
                     </div>
-
+                  <!-- Formulario de Login -->
+                    <div class="capcha">
+                        <div class="g-recaptcha" data-sitekey="6LfbYkItAAAAALPakf_wskgmV9uAr8iU2OUukHVb" id="captcha-login"></div>
+                    </div>
+                   <!-- aqui uso la primera api externa recapcha de google, la gratis por que somos pobres--> 
                     <button type="submit" class="btn-primary">INICIAR SESIÓN</button>
                     <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 </form>
 
-                <form id="form-register" action="../index.html" class="hidden">
+                <!-- Formulario de Registro (Sin etiquetas de form anidadas) -->
+                <form id="form-register" class="hidden">
                     <label>Nombre(s)</label>
                     <input type="text" required placeholder="Tu nombre">
 
@@ -47,9 +54,16 @@
                     <label>Carrera Universitaria</label>
                     <select required>
                         <option value="" disabled selected>Selecciona tu carrera</option>
-                        <option value="1">Desarrollo de Software Multiplataforma</option>
-                        <option value="2">Ciberseguridad</option>
-                        <option value="3">Infraestructura de Redes Digitales</option>
+                        <option value="1">Ingeniería en Desarrollo de Software</option>
+                        <option value="2">Ingeniería en Tecnologías de la Información</option>
+                        <option value="3">Ingeniería en Mecatrónica</option>
+                        <option value="4">Ingeniería Industrial</option>
+                        <option value="5">Licenciatura en Administración</option>
+                        <option value="6">Ingeniería en Logística</option>
+                        <option value="7">Ingeniería en Energía</option>
+                        <option value="8">Ingeniería en Nanotecnología</option>
+                        <option value="9">Ingeniería en Sistemas Automotrices</option>
+                        <option value="10">Ingeniería en Manufactura</option>
                     </select>
 
                     <label>Ingresa tu correo electrónico</label>
@@ -60,13 +74,13 @@
 
                     <label>Crea una contraseña</label>
                     <div class="password-wrapper">
-                        <input id="contraseña1" type="password" required placeholder="Contraseña">
-                        <button type="button" class="toggle-pass" class="btn-toggle">​👀​</button>
+                        <input type="password" id="contraseña1" required placeholder="Contraseña">
+                        <button type="button" class="toggle-pass">👀</button>
                     </div>
 
                     <div id="mensajes-validacion" class="mensajes-validacion">
                         <p>Cumple con las siguientes condiciones</p>
-                        <p id="minimo">Minimos 8 caracteres</p>
+                        <p id="minimo">Mínimos 8 caracteres</p>
                         <p id="mayuscula">Al menos 1 mayúscula</p>
                         <p id="numero">Al menos 1 número</p>
                         <p id="especial">Al menos un carácter especial</p>
@@ -74,14 +88,15 @@
 
                     <label>Confirma tu contraseña</label>
                     <div class="password-wrapper">
-                        <input id="contraseña2" type="password" required placeholder="Contraseña">
-                        <button type="button" class="toggle-pass" class="btn-toggle">​👀​</button>
+                        <input type="password" id="contraseña2" required placeholder="Confirma tu contraseña">
+                        <button type="button" class="toggle-pass">👀</button>
                     </div>
                     <p id="coincidencia"></p>
-
-                    <form id="form-register" onsubmit="return validarFormulario()">
-                        <button type="submit" class="btn-primary">REGISTRARSE</button>
-                    </form>
+                    <!-- Formulario de Registro -->
+                    <div class="capcha">
+                        <div class="g-recaptcha" data-sitekey="6LfbYkItAAAAALPakf_wskgmV9uAr8iU2OUukHVb" id="captcha-register"></div>
+                    </div>                   
+                    <button type="submit" class="btn-primary">REGISTRARSE</button>
                 </form>
             </div>
             
@@ -99,6 +114,6 @@
     </div>
     
     <script src="../js/main.js"></script>
-    <script src="../js/validacion-contraseña.js"></script>
+    <!-- <script src="../js/validacion-contraseña.js"></script> -->
 </body>
 </html>
