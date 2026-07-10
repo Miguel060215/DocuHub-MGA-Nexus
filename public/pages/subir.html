@@ -26,13 +26,20 @@
                     <li><a href="subir.html">SUBIR</a></li>
                 </ul>
             </div>
-            <a class="user-info" href="login.html">LOGIN</a>
+            
+            <div class="user-container">
+                <a class="user-info" id="link-login" href="login.html">LOGIN</a>
+                <div class="user-logged-info" id="panel-usuario" style="display: none;">
+                    <span>Hola, <strong id="usuario-nombre">Usuario</strong></span>
+                    <button type="button" class="btn-logout" onclick="cerrarSesion()">Salir</button>
+                </div>
+            </div>
         </header>
 
         <main class="l-main">
             <h2 class="upload-title">SUBIR DOCUMENTO</h2>
             
-            <form class="l-form-container">
+            <form class="l-form-container" id="form-subir">
                 <p>Llena los campos</p>
 
                 <div class="form-group">
@@ -43,12 +50,7 @@
                 <div class="form-group">
                     <label for="carrera">Carrera:</label>
                     <select id="carrera" name="carrera" required>
-                        <option value="">Seleccione una carrera</option>
-                        <option value="sistemas">Ingeniería en Sistemas</option>
-                        <option value="industrial">Ingeniería Industrial</option>
-                        <option value="administracion">Administración</option>
-                        <option value="contabilidad">Contabilidad</option>
-                        <option value="derecho">Derecho</option>
+                        <option value="">Cargando carreras...</option>
                     </select>
                 </div>
 
@@ -67,8 +69,7 @@
                     <input type="file" id="archivo" name="archivo" accept=".pdf" required>
                 </div>
 
-                <div style="display: flex; gap: 1rem; justify-content: space-between; margin-top: 1.5rem;">
-                    <button type="button" class="btn-secondary">Buscar documento PDF</button>
+                <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
                     <button type="submit" class="btn-primary">Enviar</button>
                 </div>
             </form>
@@ -84,5 +85,8 @@
             </div>
         </footer>
     </div>
+    
+    <script src="../js/auth-session.js"></script>
+    <script src="../js/subir.js"></script>
 </body>
 </html>

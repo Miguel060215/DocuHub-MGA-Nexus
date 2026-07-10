@@ -85,3 +85,36 @@
     display: block;
   }
 }
+.user-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-logged-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--blanco);
+  font-weight: normal; /* Evita que el contenedor duplique el grosor y genere el efecto sombra */
+}
+
+.user-logged-info strong {
+  color: var(--blanco);
+  font-weight: bold;
+}
+
+.btn-logout {
+  background-color: transparent;
+  border: 1px solid var(--accion-primaria);
+  color: var(--blanco);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all var(--transicion);
+}
+
+.btn-logout:hover {
+  background-color: var(--accion-primaria);
+}

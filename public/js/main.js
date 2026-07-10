@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-   if (formLogin) {
+    if (formLogin) {
         formLogin.addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -92,6 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (response.ok) {
                     localStorage.setItem('token', result.token);
                     localStorage.setItem('rol', result.rol);
+                    // Guardamos la información completa del usuario para usarla en el resto de páginas
+                    localStorage.setItem('usuarioActual', JSON.stringify(result.usuario));
 
                     if (result.rol === 'administrador') {
                         window.location.href = '/pages/admin.html';

@@ -63,7 +63,17 @@ const authController = {
                 message: 'Login exitoso', 
                 token, 
                 rol: usuario.rol, 
-                nombre_usuario: usuario.nombre_usuario 
+                nombre_usuario: usuario.nombre_usuario,
+                usuario: {
+                    id_usuario: usuario.id_usuario,
+                    nombre: usuario.nombre,
+                    apellido_paterno: usuario.apellido_paterno,
+                    apellido_materno: usuario.apellido_materno,
+                    nombre_usuario: usuario.nombre_usuario,
+                    correo: usuario.correo,
+                    id_carrera: usuario.id_carrera,
+                    rol: usuario.rol
+                }
             });
         } catch (error) {
             res.status(500).json({ message: 'Error en el servidor', error: error.message });
