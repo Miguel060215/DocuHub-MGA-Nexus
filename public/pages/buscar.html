@@ -39,10 +39,10 @@
 
         <main class="l-main">
             <div class="search-container-wrapper">
-                <form class="search-form-pill">
-                    <input type="text" placeholder="Busqueda por palabra clave">
-                    <button type="submit">Buscar</button>
-                </form>
+                <div class="search-form-pill">
+                    <input type="text" id="input-busqueda" placeholder="Búsqueda por palabra clave o título...">
+                    <button type="button" id="btn-ejecutar-busqueda">Buscar</button>
+                </div>
             </div>
 
             <div class="l-dos-columnas-catalog">
@@ -52,94 +52,17 @@
                     <aside class="scrollable-panel">
                         <div class="filtro-grupo">
                             <h4>Carreras</h4>
-                            <div class="checkbox-grid">
-                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
-                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
-                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
-                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
-                            </div>
-                            <button class="btn-full">Mas carreras</button>
-                        </div>
-
-                        <div class="filtro-grupo">
-                            <h4>Tipos de documento</h4>
-                            <div class="checkbox-grid">
-                                <label class="check-btn"><input type="checkbox"> Tesina</label>
-                                <label class="check-btn"><input type="checkbox"> Reporte</label>
-                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
-                                <label class="check-btn"><input type="checkbox"> Opcion1</label>
-                            </div>
+                            <div class="checkbox-grid" id="carreras-checklist-container">
+                                </div>
+                            <button class="btn-full" style="display: none;">Mas carreras</button>
                         </div>
                     </aside>
                 </div>
 
                 <div class="panel-container">
                     <h3 class="panel-title">Resultados</h3>
-                    <section class="scrollable-panel">
-                        
-                        <article class="card-resultado">
-                            <div class="card-resultado-header">
-                                <h4>Titulo: Nombre Doc</h4>
-                                <p>Autor: Nombre Autor</p>
-                                <p>Abstract: resumen del documento</p>
-                            </div>
-                            <hr class="dotted-divider">
-                            <div class="card-resultado-footer">
-                                <div class="tags-green">
-                                    <span class="tag-green">Etiqueta</span>
-                                    <span class="tag-green">Etiqueta</span>
-                                    <span class="tag-green">Etiqueta</span>
-                                </div>
-                                <button class="btn-ver-mas" onclick="window.location.href='documento.html'">Ver Mas</button>
-                            </div>
-                        </article>
-
-                        <article class="card-resultado">
-                            <div class="card-resultado-header">
-                                <h4>Titulo: Nombre Doc</h4>
-                                <p>Autor: Nombre Autor</p>
-                                <p>Abstract: resumen del documento</p>
-                            </div>
-                            <hr class="dotted-divider">
-                            <div class="card-resultado-footer">
-                                <div class="tags-green">
-                                    <span class="tag-green">Etiqueta</span>
-                                </div>
-                                <button class="btn-ver-mas" onclick="window.location.href='documento.html'">Ver Mas</button>
-                            </div>
-                        </article>
-
-                        <article class="card-resultado">
-                            <div class="card-resultado-header">
-                                <h4>Titulo: Nombre Doc</h4>
-                                <p>Autor: Nombre Autor</p>
-                                <p>Abstract: resumen del documento</p>
-                            </div>
-                            <hr class="dotted-divider">
-                            <div class="card-resultado-footer">
-                                <div class="tags-green">
-                                    <span class="tag-green">Etiqueta</span>
-                                </div>
-                                <button class="btn-ver-mas" onclick="window.location.href='documento.html'">Ver Mas</button>
-                            </div>
-                        </article>
-
-                        <article class="card-resultado">
-                            <div class="card-resultado-header">
-                                <h4>Titulo: Nombre Doc</h4>
-                                <p>Autor: Nombre Autor</p>
-                                <p>Abstract: resumen del documento</p>
-                            </div>
-                            <hr class="dotted-divider">
-                            <div class="card-resultado-footer">
-                                <div class="tags-green">
-                                    <span class="tag-green">Etiqueta</span>
-                                </div>
-                                <button class="btn-ver-mas" onclick="window.location.href='documento.html'">Ver Mas</button>
-                            </div>
-                        </article>
-
-                    </section>
+                    <section class="scrollable-panel" id="resultados-container">
+                        </section>
                 </div>
             </div>
         </main>
@@ -155,5 +78,6 @@
         </footer>
     </div>
     <script src="/js/auth-session.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
