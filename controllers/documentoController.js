@@ -4,6 +4,90 @@ const DocumentoEtiqueta = require('../models/documentoEtiquetasModel');
 const db = require('../config/db');
 
 const documentoController = {
+
+    registrarAccesoGeo: async (req, res) => {
+        try {
+            const { id_documento, lat, lon } = req.body;
+
+            let ipCliente = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
+            if (ipCliente.includes(',')) ipCliente = ipCliente.split(',')[0].trim();
+            if (ipCliente === '::1') ipCliente = '127.0.0.1';
+
+            let pais = 'Local / GPS';
+            let ciudad = 'Ubicación Exacta';
+            let latitudFinal = lat || null;
+            let longitudFinal = lon || null;
+
+
+            if (!latitudFinal || !longitudFinal) {
+                const fetch = (await import('node-fetch')).default;
+                const ipParaConsulta = (ipCliente === '127.0.0.1') ? '8.8.8.8' : ipCliente;
+                const geoResponse = await fetch(`http://ip-api.com/json/${ipParaConsulta}`);
+                const geoData = await geoResponse.json();
+
+                if (geoData.status === 'success') {
+                    pais = geoData.country;
+                    ciudad = geoData.city;
+                    latitudFinal = geoData.lat;
+                    longitudFinal = geoData.lon;
+                }
+            }
+
+            await db.query(
+                `INSERT INTO registro_accesos_geo (id_documento, ip, pais, ciudad, lat, lon) VALUES (?, ?, ?, ?, ?, ?)`,
+                [id_documento, ipCliente, pais, ciudad, latitudFinal, longitudFinal]
+            );
+
+            res.json({ message: 'Acceso registrado correctamente' });
+
+        } catch (error) {
+            console.error('Error al registrar geolocalización:', error.message);
+            res.status(500).json({ message: 'Error interno al registrar acceso' });
+        }
+    },
+
+    obtenerAccesosGeoAdmin: async (req, res) => {
+        try {
+            const [rows] = await db.query(`SELECT * FROM registro_accesos_geo ORDER BY fecha_consulta DESC LIMIT 100`);
+            res.json(rows);
+        } catch (error) {
+            console.error('Error al obtener registros geográficos:', error.message);
+            res.status(500).json({ message: 'Error interno en el servidor' });
+        }
+    },
+
+    obtenerDocumentosAdmin: async (req, res) => {
+        try{
+            const documentos = await Documento.getAllForAdmin();
+            res.json(documentos);
+        }catch(error){
+            console.error('Error al obtenr documentos para administrar: ', error.message);
+            res.status(500).json({ message: 'Error interno en el servidor', detalle: error.message });
+        }
+    },
+
+    cambiarEstadoDocumento: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const { id_estado } = req.body;
+
+            if (!id_estado || (id_estado !== 2 && id_estado !== 3 && id_estado !== 1)) {
+                return res.status(400).json({ message: 'Estado no válido' });
+            }
+
+            const filasAfectadas = await Documento.updateStatus(id, id_estado);
+
+            if (filasAfectadas === 0) {
+                return res.status(404).json({ message: 'Documento no encontrado' });
+            }
+
+            res.json({ message: 'Estado del documento actualizado con éxito' });
+        } catch (error) {
+            console.error('Error al cambiar el estado del documento: ', error.message);
+            res.status(500).json({ message: 'Error interno en el servidor' });
+        }
+    },
+
     subirDocumento: async (req, res) => {
         try {
             const { titulo, resumen, id_usuario, id_carrera, palabras } = req.body;
@@ -45,6 +129,7 @@ const documentoController = {
             res.status(500).json({ message: 'Error interno en el servidor', detalle: error.message });
         }
     },
+
     obtenerDocumentoPorId: async (req, res) => {
         try {
             const { id } = req.params;
@@ -65,7 +150,8 @@ const documentoController = {
             res.status(500).json({ message: 'Error interno en el servidor' });
         }
     },
-  buscarDocumentos: async (req, res) => {
+
+    buscarDocumentos: async (req, res) => {
         try {
             const { q, carreras } = req.query;
             const termino = q ? q.trim() : '';

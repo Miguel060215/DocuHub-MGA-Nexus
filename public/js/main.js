@@ -165,6 +165,47 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    const registrarVisitaGeo = (idDocumento) => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                async (posicion) => {
+                    try {
+                        await fetch('/documentos/geo/registrar', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                id_documento: idDocumento,
+                                lat: posicion.coords.latitude,
+                                lon: posicion.coords.longitude
+                            })
+                        });
+                    } catch (e) {
+                        console.error("Error al registrar con GPS:", e);
+                    }
+                },
+                async (error) => {
+                    console.warn("GPS denegado o no disponible:", error.message);
+                    try {
+                        await fetch('/documentos/geo/registrar', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ id_documento: idDocumento, lat: 0, lon: 0 })
+                        });
+                    } catch (e) {
+                        console.error(e);
+                    }
+                },
+                { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+            );
+        } else {
+            fetch('/documentos/geo/registrar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id_documento: idDocumento, lat: 0, lon: 0 })
+            }).catch(e => console.error(e));
+        }
+    };
+
     const cargarNovedades = async () => {
         const contenedorNovedades = document.getElementById('novedades-container');
         if (!contenedorNovedades) return;
@@ -192,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 contenedorNovedades.appendChild(article);
             });
         } catch (error) {
-            console.error("No se pudieron renderizar las novedades: ", error);
+            console.error(error);
             contenedorNovedades.innerHTML = '<p>No se pudieron cargar las novedades en este momento.</p>';
         }
     };
@@ -202,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const id = params.get('id');
 
         if (!id) return;
-
+        registrarVisitaGeo(id);
         try {
             const response = await fetch(`/documentos/${id}`);
             if (!response.ok) throw new Error('No se pudo cargar el documento');
@@ -246,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         } catch (error) {
-            console.error("Error al renderizar el detalle del documento:", error);
+            console.error(error);
         }
     };
 
@@ -270,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 contenedor.appendChild(label);
             });
         } catch (err) {
-            console.error('No se pudieron cargar los filtros de carreras:', err);
+            console.error(err);
         }
     };
 
@@ -297,7 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-           resultados.forEach(doc => {
+            resultados.forEach(doc => {
                 const card = document.createElement('article');
                 card.className = 'card-resultado';
                 
@@ -323,13 +364,50 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
 
                 const btnVerMas = card.querySelector('.btn-ver-mas');
+                
                 if (doc.es_local) {
                     btnVerMas.addEventListener('click', () => {
                         window.location.href = `/pages/documento.html?id=${doc.id_documento}`;
                     });
                 } else if (doc.archivo_url) {
-                    btnVerMas.addEventListener('click', () => {
-                        window.open(doc.archivo_url, '_blank', 'noopener,noreferrer');
+                    btnVerMas.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const urlDestino = doc.archivo_url;
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(
+                                async (posicion) => {
+                                    try {
+                                        await fetch('/documentos/geo/registrar', {
+                                            method: 'POST',
+                                            headers: { 'Content-Type': 'application/json' },
+                                            body: JSON.stringify({
+                                                id_documento: doc.id_documento,
+                                                lat: posicion.coords.latitude,
+                                                lon: posicion.coords.longitude
+                                            })
+                                        });
+                                    } catch (e) {
+                                        console.error(e);
+                                    }
+                                    window.open(urlDestino, '_blank', 'noopener,noreferrer');
+                                },
+                                async () => {
+                                    try {
+                                        await fetch('/documentos/geo/registrar', {
+                                            method: 'POST',
+                                            headers: { 'Content-Type': 'application/json' },
+                                            body: JSON.stringify({ id_documento: doc.id_documento, lat: 0, lon: 0 })
+                                        });
+                                    } catch (e) {
+                                        console.error(e);
+                                    }
+                                    window.open(urlDestino, '_blank', 'noopener,noreferrer');
+                                },
+                                { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+                            );
+                        } else {
+                            window.open(urlDestino, '_blank', 'noopener,noreferrer');
+                        }
                     });
                 } else {
                     btnVerMas.disabled = true;
@@ -340,7 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 contenedorResultados.appendChild(card);
             });
         } catch (err) {
-            console.error('Error al realizar la búsqueda:', err);
+            console.error(err);
             contenedorResultados.innerHTML = '<p>Ocurrió un error al procesar la búsqueda.</p>';
         }
     };

@@ -174,3 +174,20 @@ td button {
     max-height: 50vh;
   }
 }
+.detalle-admin-card {
+  color: black;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.detalle-admin-card h4 {
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.detalle-admin-card p {
+    font-size: 0.9rem;
+    margin: 3px 0;
+}

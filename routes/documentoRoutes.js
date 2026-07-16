@@ -4,6 +4,9 @@ const upload = require('../middlewares/uploadMiddleware');
 const documentoController = require('../controllers/documentoController');
 const Documento = require('../models/documentoModel');
 
+router.get('/admin/solicitudes', documentoController.obtenerDocumentosAdmin);
+router.put('/admin/estado/:id', documentoController.cambiarEstadoDocumento);
+
 router.get('/recientes', async (req, res) => {
     try {
         const documentos = await Documento.getRecent(4);
@@ -16,8 +19,12 @@ router.get('/recientes', async (req, res) => {
 
 router.get('/buscar', documentoController.buscarDocumentos);
 
+router.post('/subir', upload.single('archivo'), documentoController.subirDocumento);
+
 router.get('/:id', documentoController.obtenerDocumentoPorId);
 
-router.post('/subir', upload.single('archivo'), documentoController.subirDocumento);
+router.post('/geo/registrar', documentoController.registrarAccesoGeo);
+
+router.get('/admin/geo/stats', documentoController.obtenerAccesosGeoAdmin);
 
 module.exports = router;

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DocuHub - Moderación</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
     <div class="l-wrapper">
@@ -61,6 +63,15 @@
                     </div>
                 </aside>
             </div>
+
+            <div class="l-main">
+                <h3>MAPA DE CONSULTAS Y ACCESOS</h3>
+                <section class="table-container">
+                    <div class="admin-map-section" style="margin-top: 40px; background: #fff; padding: 20px; border-radius: 8px;">
+                        <div id="mapa-accesos" style="height: 400px; width: 100%; border-radius: 6px;"></div>
+                    </div>
+                </section>
+            </div>
         </main>
 
         <footer class="l-footer">
@@ -73,5 +84,6 @@
             </div>
         </footer>
     </div>
+    <script src="../js/admin.js"></script>
 </body>
 </html>
