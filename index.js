@@ -1,7 +1,21 @@
 require('dotenv').config();
+require('./config/passport');
+
 const express = require('express');
 const path = require('path');
+const session = require('express-session');
+const passport = require('passport');
+
 const app = express();
+
+app.use(session({
+    secret: process.env.JWT_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 const authRoutes = require('./routes/authRoutes');
 const carreraRoutes = require('./routes/carrerasRoutes');

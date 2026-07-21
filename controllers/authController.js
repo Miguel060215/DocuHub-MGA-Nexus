@@ -78,7 +78,40 @@ const authController = {
         } catch (error) {
             res.status(500).json({ message: 'Error en el servidor', error: error.message });
         }
+    },
+
+    googleRedirect: (req, res) => {
+    try {
+        const usuario = req.user;
+        const token = jwt.sign(
+            {id_usuario: usuario.id_usuario, nombre_usuario: usuario.nombre_usuario, rol: usuario.rol},
+            process.env.JWT_SECRET,
+            {expiresIn: '2h'}
+        );
+
+        console.log(`Login con google exitoso para: ${usuario.nombre_usuario}`);
+
+        // Construimos los parámetros usando las variables reales 'token' y 'usuario'
+        const queryParams = new URLSearchParams({
+            token: token,
+            rol: usuario.rol,
+            usuario: JSON.stringify({
+                id_usuario: usuario.id_usuario,
+                nombre: usuario.nombre,
+                apellido_paterno: usuario.apellido_paterno,
+                apellido_materno: usuario.apellido_materno,
+                nombre_usuario: usuario.nombre_usuario,
+                correo: usuario.correo,
+                id_carrera: usuario.id_carrera,
+                rol: usuario.rol
+            })
+        }).toString();
+
+        return res.redirect(`/pages/google-success.html?${queryParams}`);
+    } catch(error) {
+        res.status(500).json({message: 'Error en el servidor al procesar Google Auth', error: error.message});
     }
+}
 };
 
 module.exports = authController;

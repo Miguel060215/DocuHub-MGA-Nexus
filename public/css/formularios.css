@@ -86,12 +86,22 @@ input[type="checkbox"] {
   color: var(--blanco);
 }
 
-.forgot-password {
-  display: block;
-  margin-top: 1rem;
+.btn-google-link {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  text-decoration: none;
+  margin-top: 1.5rem;
   font-size: 0.85rem;
   color: var(--texto-secundario);
   text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
+.google{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 .forgot-password:hover {

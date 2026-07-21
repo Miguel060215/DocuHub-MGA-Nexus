@@ -191,3 +191,8 @@ td button {
     font-size: 0.9rem;
     margin: 3px 0;
 }
+th:last-child,
+td:last-child{
+  white-space: nowrap;
+  width: 1%;
+}

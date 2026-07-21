@@ -16,3 +16,11 @@ ESTRUCTURA DE CARPETAS Y ARCHIVOS:
 - .env              : Variables de entorno secretas (Credenciales de BD).
 - index.js          : Servidor principal (Express) y punto de entrada de la aplicación.
 - package.json      : Listado de dependencias y configuración del proyecto.
+
+
+
+
+al implementar la Api de Google auth, tuve problemas al arrancar el servidor, que no tenia nada que ver con la sintaxis del codiho
+lo que tuve que hacer es usar el comando netstat -ano | findstr :3000 para ver si un proceso estaba pcupando el puerto
+al verificar que habia un proceso sombie, lo terminaba definitivamente con Stop-Process -Id <PID> -Force donde <PID> es el numeron id del proceso
+despues solo inicie el servidor dee nuevo

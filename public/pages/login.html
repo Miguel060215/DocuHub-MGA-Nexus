@@ -37,7 +37,11 @@
                     </div>
                    <!-- aqui uso la primera api externa recapcha de google, la gratis por que somos pobres--> 
                     <button type="submit" class="btn-primary">INICIAR SESIÓN</button>
-                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
+                    <a href="/auth/google" class="btn-google-link">
+                        <img src="../assets/iconoGoogle.png" alt="" class="google">
+                        <span>Inicie con Google</span>
+                    </a>
                 </form>
 
                 <!-- Formulario de Registro (Sin etiquetas de form anidadas) -->
@@ -97,9 +101,14 @@
                         <div class="g-recaptcha" data-sitekey="6LfbYkItAAAAALPakf_wskgmV9uAr8iU2OUukHVb" id="captcha-register"></div>
                     </div>                   
                     <button type="submit" class="btn-primary">REGISTRARSE</button>
+
+                    <a href="/auth/google" class="btn-google-link">
+                        <img src="../assets/iconoGoogle.png" alt="" class="google">
+                        <span>Registrese con Google</span>
+                    </a>
                 </form>
             </div>
-            
+
         </main>
         
         <footer class="l-footer">
