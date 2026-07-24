@@ -5,8 +5,13 @@ const Usuario = require('../models/usuarioModel');
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "/auth/google/callback"
+   // callbackURL: "/auth/google/callback"
+    callbackURL: process.env.NODE_ENV === 'production'
+        ? "https://docuhub-mga-nexus.onrender.com/auth/google/callback"
+        : "/auth/google/callback",
+    proxy: true
 },
+
 async (accessToken, refreshToken, profile, done) => {
     try{
         const correo = profile.emails[0].value;

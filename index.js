@@ -8,6 +8,8 @@ const passport = require('passport');
 
 const app = express();
 
+app.set('trust proxy', 1);
+
 app.use(session({
     secret: process.env.JWT_SECRET,
     resave: false,
