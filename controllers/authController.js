@@ -2,15 +2,22 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const Usuario = require('../models/usuarioModel');
 const axios = require('axios');
+const { response } = require('express');
 
 const authController = {
     register: async (req, res) => {
         const { recaptchaToken } = req.body;
         const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-        const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
+       // const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
 
         try {
-            const response = await axios.post(verifyUrl);
+           // const response = await axios.post(verifyUrl);
+            const response = await axios.post(`https://www.google.com/recaptcha/api/siteverify`, null,{
+                params:{
+                    secret: secretKey,
+                    response: recaptchaToken
+                }
+            });
             if (!response.data.success) {
                 return res.status(400).json({ message: 'Fallaste el captcha' });
             }
@@ -36,8 +43,13 @@ const authController = {
             
             // Validación de reCAPTCHA para Login
             const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-            const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
-            const response = await axios.post(verifyUrl);
+           // const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
+            const response = await axios.post(`https://www.google.com/recaptcha/api/siteverify`, null,{
+                params:{
+                    secret: secretKey,
+                    response: recaptchaToken
+                }
+            });
 
             if (!response.data.success) {
                 return res.status(400).json({ message: 'Error en la verificación del reCAPTCHA' });
