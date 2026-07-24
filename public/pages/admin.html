@@ -18,9 +18,9 @@
                 <span class="role-text">Panel de Administrador</span>
                 <span class="separator">|</span>
                 <!--aqui voy a poner el nombre del usuario admin pero aun no-->
-                <span class="user-name"> nombre_usuario </span>
+                <span class="user-name">Hola, <strong id="usuario-nombre">Administrador</strong> </span>
                 <span class="separator">|</span>
-                <a href="../pages/login.html" class="logout-link">Cerrar sesión</a>
+                <a type="button" class="logout-link" onclick="cerrarSesion()">Cerrar sesión</a>
             </div>
         </header>
 
@@ -85,5 +85,6 @@
         </footer>
     </div>
     <script src="../js/admin.js"></script>
+    <script src="../js/auth-session.js"></script>
 </body>
 </html>
