@@ -2,6 +2,7 @@ const Documento = require('../models/documentoModel');
 const Etiqueta = require('../models/etiquetasModel');
 const DocumentoEtiqueta = require('../models/documentoEtiquetasModel');
 const db = require('../config/db');
+const cloudinary = require('../config/cloudinary');
 
 const documentoController = {
 
@@ -96,10 +97,28 @@ const documentoController = {
                 return res.status(400).json({ message: 'No se ha adjuntado ningún archivo PDF' });
             }
 
+            const subirACloudinary = (fileBuffer) => {
+                return new Promise((resolve, reject) => {
+                    const stream = cloudinary.uploader.upload_stream(
+                        {
+                            resource_type: 'auto',
+                            folder: 'docuhub_documentos'
+                        },
+                        (error, result)=>{
+                            if(error) return reject(error);
+                            resolve(result);
+                        }
+                    );
+                    stream.end(fileBuffer);
+                });
+            };
+
+            const resultadoCloudinary = await subirACloudinary(req.file.buffer);
+
             const nuevoDoc = {
                 titulo,
                 resumen,
-                archivo_url: `/uploads/${req.file.filename}`,
+                archivo_url: resultadoCloudinary.secure_url,
                 nombre_original: req.file.originalname,
                 id_usuario,
                 id_carrera

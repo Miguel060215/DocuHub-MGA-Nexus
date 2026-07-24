@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const upload = require('../middlewares/uploadMiddleware');
+const multer = require('multer');
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
 const documentoController = require('../controllers/documentoController');
 const Documento = require('../models/documentoModel');
 
