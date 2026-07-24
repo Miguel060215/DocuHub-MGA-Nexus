@@ -33,7 +33,9 @@ const authController = {
             console.log("Usuario registrado correctamente: " + nombre_usuario);
             res.status(201).json({ message: 'Usuario registrado correctamente' });
         } catch (error) {
+            console.error("DETALLE DEL ERROR RECAPTCHA:", error.response?.data || error.message);
             res.status(500).json({ message: 'Error interno al validar reCaptcha', error: error.message });
+            //res.status(500).json({ message: 'Error interno al validar reCaptcha', error: error.message });
         }
     },
 
