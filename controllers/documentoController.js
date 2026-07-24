@@ -101,8 +101,9 @@ const documentoController = {
                 return new Promise((resolve, reject) => {
                     const stream = cloudinary.uploader.upload_stream(
                         {
-                            resource_type: 'auto',
-                            folder: 'docuhub_documentos'
+                            resource_type: 'raw',
+                            folder: 'docuhub_documentos',
+                            public_id: req.file.originalname.split('.')[0]
                         },
                         (error, result)=>{
                             if(error) return reject(error);
