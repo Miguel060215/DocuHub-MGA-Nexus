@@ -103,6 +103,7 @@ const documentoController = {
                         {
                             resource_type: 'auto',
                             folder: 'docuhub_documentos',
+                            public_id: `${Date.now()}-${Math.round(Math.random() * 1000)}`,
                             format: 'pdf'
                         },
                         (error, result)=>{
