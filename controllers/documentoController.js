@@ -105,8 +105,8 @@ const documentoController = {
                             folder: 'docuhub_documentos',
                             public_id: `${Date.now()}-${Math.round(Math.random() * 1000)}`
                         },
-                        (error, result)=>{
-                            if(error) return reject(error);
+                        (error, result) => {
+                            if (error) return reject(error);
                             resolve(result);
                         }
                     );
@@ -116,23 +116,11 @@ const documentoController = {
 
             const resultadoCloudinary = await subirACloudinary(req.file.buffer);
 
-const resultadoCloudinary = await subirACloudinary(req.file.buffer);
-
-// 👇 Agrega esto aquí
-console.log('--- DEBUG CLOUDINARY ---');
-console.log('resource_type:', resultadoCloudinary.resource_type);
-console.log('format:', resultadoCloudinary.format);
-console.log('secure_url:', resultadoCloudinary.secure_url);
-console.log('------------------------');
-
-const nuevoDoc = {
-    titulo,
-    resumen,
-    archivo_url: resultadoCloudinary.secure_url,
-    nombre_original: req.file.originalname,
-    id_usuario,
-    id_carrera
-};
+            console.log('--- DEBUG CLOUDINARY ---');
+            console.log('resource_type:', resultadoCloudinary.resource_type);
+            console.log('format:', resultadoCloudinary.format);
+            console.log('secure_url:', resultadoCloudinary.secure_url);
+            console.log('------------------------');
 
             const nuevoDoc = {
                 titulo,
