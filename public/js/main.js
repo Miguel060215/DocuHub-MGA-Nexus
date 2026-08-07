@@ -437,3 +437,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+function ejecutarBusqueda() {
+    btnBuscar.click();
+}
+contenedorCarrerar.addEventListener('change', (e)=>{
+    if(e.target.matches('input[type="checkbox"]')){
+        ejecutarBusqueda();
+    }
+});
