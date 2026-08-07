@@ -25,8 +25,8 @@ const documentoRoutes = require('./routes/documentoRoutes');
 const etiquetasRoutes = require('./routes/etiquetasRoutes');
 const usuarioRoutes = require('./routes/usuarioRoutes');
 
-app.use(express.json({limit: '35mb'})); 
-app.use(express.urlencoded({ limit: '35mb', extended: true })); 
+app.use(express.json({limit: '10mb'})); 
+app.use(express.urlencoded({ limit: '10mb', extended: true })); 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/auth', authRoutes);
